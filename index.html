@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orvo para Inmobiliarias — Cerrá más operaciones sin sumar personal</title>
+  <meta name="description" content="Orvo ayuda a inmobiliarias a no perder leads y cerrar más operaciones con un agente de IA que responde, califica y agenda visitas 24/7 por WhatsApp." />
+  <meta name="keywords" content="Orvo, agente IA inmobiliaria, automatización leads inmobiliaria, WhatsApp inmobiliaria, IA bienes raíces Argentina" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://orvo.space/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://orvo.space/" />
+  <meta property="og:title" content="Orvo — Inmobiliarias que cierran más sin contratar más" />
+  <meta property="og:description" content="Agente de IA para inmobiliarias. Respondé leads en segundos. Cerrá más operaciones sin sumar personal." />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="Orvo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Orvo para Inmobiliarias" />
+  <meta name="twitter:description" content="Agente de IA que responde, califica y agenda leads 24/7 para tu inmobiliaria." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Orvo",
+    "description": "Agente de IA para inmobiliarias argentinas. Automatiza la captación y calificación de leads por WhatsApp.",
+    "url": "https://orvo-site.vercel.app",
+    "areaServed": "AR",
+    "serviceType": "Automatización con IA para inmobiliarias"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --blue-light: #eff6ff;
+      --blue-mid: #dbeafe;
+      --text: #0f172a;
+      --muted: #64748b;
+      --muted-light: #94a3b8;
+      --bg: #ffffff;
+      --bg2: #f8fafc;
+      --bg3: #f1f5f9;
+      --border: #e2e8f0;
+      --teal: #00B4A6;
+      --green: #16a34a;
+      --green-light: #dcfce7;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── ANNOUNCEMENT BAR ── */
+    .announcement-bar {
+      background: var(--blue);
+      color: white;
+      text-align: center;
+      padding: 0.55rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+    .announcement-bar a {
+      color: white;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-weight: 600;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: box-shadow 0.2s;
+    }
+    nav.scrolled { box-shadow: 0 1px 16px rgba(0,0,0,0.06); }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--blue);
+      color: white;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.5rem 1.1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--blue-dark); transform: translateY(-1px); }
+
+    .nav-mobile-cta {
+      display: none;
+      background: var(--blue);
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.45rem 0.9rem;
+      border-radius: 7px;
+      text-decoration: none;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section { padding: 96px 0; }
+
+    /* ── FADE ANIMATION ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.d1 { transition-delay: 0.1s; }
+    .fade-up.d2 { transition-delay: 0.2s; }
+    .fade-up.d3 { transition-delay: 0.3s; }
+    .fade-up.d4 { transition-delay: 0.4s; }
+
+    /* ── LABELS & BUTTONS ── */
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: var(--blue-light);
+      border: 1px solid var(--blue-mid);
+      border-radius: 100px;
+      padding: 0.25rem 0.8rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--blue);
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-primary:hover {
+      background: var(--blue-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37,99,235,0.28);
+    }
+
+    .btn-primary-lg { font-size: 1rem; padding: 1rem 2rem; border-radius: 12px; }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 0.85rem 1.4rem;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 1.5px solid var(--border);
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .btn-ghost:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      background: var(--blue-light);
+    }
+
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: white;
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+    }
+
+    /* ─────────────────────── */
+    /* HERO                    */
+    /* ─────────────────────── */
+    #hero {
+      padding-top: 80px;
+      padding-bottom: 80px;
+      background: linear-gradient(180deg, #eef4ff 0%, #f8fafc 40%, #ffffff 100%);
+      text-align: center;
+    }
+
+    .hero-label { margin-bottom: 1.75rem; }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      max-width: 820px;
+      margin: 0 auto 1.4rem;
+      color: var(--text);
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--blue);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+
+    .hero-proof {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .proof-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .proof-badge .live-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+      animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+
+    .proof-avatars {
+      display: flex;
+      align-items: center;
+    }
+    .proof-avatar {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 2px solid white;
+      margin-left: -8px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .proof-avatar:first-child { margin-left: 0; }
+    .av1 { background: #2563eb; }
+    .av2 { background: #7c3aed; }
+    .av3 { background: #db2777; }
+    .av4 { background: #ea580c; }
+    .av5 { background: #0891b2; }
+
+    /* ─────────────────────── */
+    /* LOGO STRIP              */
+    /* ─────────────────────── */
+    #logos {
+      padding: 32px 0;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logos-label {
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted-light);
+      margin-bottom: 1.25rem;
+    }
+
+    .logos-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .logo-item {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #cbd5e1;
+    }
+
+    .logo-sep {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: #e2e8f0;
+    }
+
+    /* ─────────────────────── */
+    /* VSL                     */
+    /* ─────────────────────── */
+    #vsl {
+      padding: 80px 0;
+      background: #0f172a;
+      text-align: center;
+    }
+
+    #vsl .label {
+      background: rgba(37,99,235,0.15);
+      border-color: rgba(37,99,235,0.3);
+      color: #93c5fd;
+      margin-bottom: 1.5rem;
+    }
+
+    #vsl h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: white;
+      margin-bottom: 0.6rem;
+    }
+
+    #vsl .vsl-sub {
+      color: #64748b;
+      font-size: 0.95rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .vsl-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .vsl-frame {
+      position: relative;
+      padding-bottom: 56.25%;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #1e293b;
+      border: 1px solid #1e293b;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+    }
+
+    .vsl-frame iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* placeholder shown when no iframe */
+    .vsl-placeholder {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      cursor: pointer;
+    }
+
+    .play-btn {
+      width: 72px; height: 72px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .play-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 10px rgba(37,99,235,0.2);
+    }
+
+    .vsl-placeholder p {
+      color: #475569;
+      font-size: 0.875rem;
+      margin: 0;
+    }
+
+    /* ─────────────────────── */
+    /* STATS                   */
+    /* ─────────────────────── */
+    #resultados {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-head {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.6rem;
+      margin-top: 0.75rem;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 480px;
+      line-height: 1.7;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .stat-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .stat-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+      transform: translateY(-3px);
+    }
+
+    .stat-icon {
+      width: 42px; height: 42px;
+      background: var(--blue-light);
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .big-num {
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: var(--blue);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      font-size: 0.93rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ─────────────────────── */
+    /* CASE STUDY              */
+    /* ─────────────────────── */
+    #caso {
+      background: white;
+    }
+
+    .case-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.06);
+      margin-top: 3rem;
+    }
+
+    .case-top {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+      padding: 2.5rem 3rem;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .case-co-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.75rem;
+    }
+
+    .case-top h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .case-top > .case-left > p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 500px;
+    }
+
+    .case-badges {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      min-width: 190px;
+    }
+
+    .result-badge {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.65rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .result-badge strong {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: -0.02em;
+    }
+
+    .result-badge span {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.3;
+    }
+
+    .case-bottom {
+      padding: 2.5rem 3rem;
+    }
+
+    .case-quote {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+      font-style: italic;
+      padding-left: 1.5rem;
+      border-left: 3px solid var(--blue);
+      margin-bottom: 1.5rem;
+    }
+
+    .case-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .author-av {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue) 0%, #7c3aed 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .author-name { font-size: 0.875rem; font-weight: 600; color: var(--text); }
+    .author-role { font-size: 0.775rem; color: var(--muted); }
+
+    /* ─────────────────────── */
+    /* HOW IT WORKS            */
+    /* ─────────────────────── */
+    #como {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+    }
+
+    .section-head.center {
+      text-align: center;
+    }
+    .section-head.center p { margin: 0 auto; }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+      position: relative;
+    }
+
+    .steps-connector {
+      position: absolute;
+      top: 1.35rem;
+      left: calc(50% / 3 + 1.3rem);
+      right: calc(50% / 3 + 1.3rem);
+      height: 1px;
+      background: repeating-linear-gradient(90deg, var(--border) 0px, var(--border) 6px, transparent 6px, transparent 12px);
+      pointer-events: none;
+    }
+
+    .step-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem 1.75rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .step-card:hover {
+      box-shadow: 0 6px 28px rgba(0,0,0,0.07);
+      transform: translateY(-3px);
+    }
+
+    .step-num {
+      width: 44px; height: 44px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-card h3 {
+      font-size: 1.02rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-card p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .step-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--blue);
+      background: var(--blue-light);
+      border-radius: 100px;
+      padding: 0.2rem 0.65rem;
+      margin-top: 1rem;
+    }
+
+    /* ─────────────────────── */
+    /* CALENDAR                */
+    /* ─────────────────────── */
+    #agendar {
+      background: white;
+      border-top: 1px solid var(--border);
+    }
+
+    .agendar-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .agendar-left h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .agendar-left p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 1.75rem;
+    }
+
+    .agendar-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .agendar-bullets li {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.875rem;
+      color: var(--text);
+    }
+
+    .check-circle {
+      width: 20px; height: 20px;
+      background: var(--green-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .check-circle svg { color: var(--green); }
+
+    .cal-box {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      min-height: 700px;
+      background: var(--bg2);
+    }
+
+    /* ── Calendly placeholder (remove when real embed is active) ── */
+    .cal-placeholder {
+      min-height: 580px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .cal-icon {
+      width: 56px; height: 56px;
+      background: var(--blue-light);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .cal-placeholder h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .cal-placeholder p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      max-width: 240px;
+      line-height: 1.55;
+    }
+
+    .cal-placeholder .btn-primary {
+      font-size: 0.875rem;
+      padding: 0.75rem 1.4rem;
+    }
+
+    /* ─────────────────────── */
+    /* FINAL CTA               */
+    /* ─────────────────────── */
+    #cta-final {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 60%, #2563eb 100%);
+      text-align: center;
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #cta-final::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    #cta-final h2 {
+      font-size: clamp(2rem, 4.5vw, 3.1rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      color: white;
+      max-width: 600px;
+      margin: 0 auto 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    #cta-final p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      max-width: 440px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.75;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-trust {
+      margin-top: 1.25rem;
+      font-size: 0.775rem;
+      color: rgba(255,255,255,0.4);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ─────────────────────── */
+    /* FOOTER                  */
+    /* ─────────────────────── */
+    footer {
+      background: #0f172a;
+      padding: 2.5rem 0;
+      border-top: 1px solid #1e293b;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+    }
+
+    footer p {
+      font-size: 0.775rem;
+      color: #475569;
+    }
+
+    /* ─────────────────────── */
+    /* RESPONSIVE              */
+    /* ─────────────────────── */
+    @media (max-width: 900px) {
+      .agendar-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 70px 0; }
+      #hero { padding-top: 56px; padding-bottom: 64px; }
+      #cta-final { padding: 80px 0; }
+      .nav-links { display: none; }
+      .nav-mobile-cta { display: block; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .steps-connector { display: none; }
+      .case-top { grid-template-columns: 1fr; padding: 2rem; }
+      .case-bottom { padding: 2rem; }
+      .case-badges { flex-direction: row; flex-wrap: wrap; }
+    }
+
+    @media (max-width: 480px) {
+      nav { padding: 0 1rem; }
+      .container { padding: 0 1.25rem; }
+      .hero-ctas { flex-direction: column; align-items: stretch; }
+      .hero-ctas a { text-align: center; justify-content: center; }
+      .hero-proof { gap: 1rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BANNER -->
+  <div class="announcement-bar">
+    ✦ Más de 15 inmobiliarias ya automatizan sus leads con Orvo — <a href="#agendar">Agendá una llamada gratuita</a>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a class="nav-logo" href="#">
+      <svg width="28" height="28" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28 5C28 5 12 20.5 12 33C12 41.837 19.163 49 28 49C36.837 49 44 41.837 44 33C44 20.5 28 5 28 5Z" fill="#2B55F5"/>
+        <circle cx="28" cy="34" r="7.5" stroke="white" stroke-width="2" fill="none"/>
+        <circle cx="28" cy="34" r="2.5" fill="white"/>
+      </svg>
+      <span style="color:#0D1228;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;letter-spacing:-0.01em;">Orvo</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#como">Cómo funciona</a></li>
+      <li><a href="#caso">Casos de éxito</a></li>
+      <li><a href="#agendar" class="nav-cta">Agendá una llamada</a></li>
+    </ul>
+    <a href="#agendar" class="nav-mobile-cta">Agendá llamada</a>
+  </nav>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- 1. HERO                               -->
+  <!-- ══════════════════════════════════════ -->
+  <section id="hero">
+    <div class="container">
+
+      <div class="label hero-label fade-up">Para inmobiliarias</div>
+
+      <h1 class="fade-up d1">
+        Tu inmobiliaria pierde leads<br>
+        por no responder <em>a tiempo.</em>
+      </h1>
+
+      <p class="hero-sub fade-up d2">
+        Orvo implementa un agente de IA que captura, califica y nutre tus leads
+        24/7 por WhatsApp — para que tu equipo solo hable con quienes están
+        listos para comprar o alquilar.
+      </p>
+
+      <div class="hero-ctas fade-up d3">
+        <a href="#agendar" class="btn-primary btn-primary-lg">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Agendá una llamada gratuita
+        </a>
+        <a href="#caso" class="btn-ghost">
+          Ver casos de éxito
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-proof fade-up d4">
+        <div class="proof-badge">
+          <div class="proof-avatars">
+            <div class="proof-avatar av1">LR</div>
+            <div class="proof-avatar av2">NP</div>
+            <div class="proof-avatar av3">BP</div>
+            <div class="proof-avatar av4">SP</div>
+            <div class="proof-avatar av5">+</div>
+          </div>
+          <span>15+ inmobiliarias trabajan con Orvo</span>
+        </div>
+        <div class="proof-badge">
+          <div class="live-dot"></div>
+          <span>Tiempo de respuesta promedio: 47 segundos</span>
+        </div>
+        <div class="proof-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span>Sin contrato de permanencia</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- LOGO STRIP                            -->
+  <!-- ══════════════════════════════════════ -->
+  <div id="logos">
+    <div class="container">
+      <p class="logos-label">Inmobiliarias que ya trabajan con Orvo</p>
+      <div class="logos-strip">
+        <span class="logo-item">Grupo Palermo</span>
+        <span class="logo-sep"></span>
+        <span class="logo-item">Norte Propiedades</span>
+        <span class="logo-sep"></span>
+        <span class="logo-item">Barrio Real</span>
+        <span class="logo-sep"></span>
+        <span class="logo-item">Selecta RE</span>
+        <span class="logo-sep"></span>
+        <span class="logo-item">Altius Propiedades</span>
+        <span class="logo-sep"></span>
+        <span class="logo-item">Coyote Brokers</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- 2. VSL                                -->
+  <!-- ══════════════════════════════════════ -->
+  <section id="vsl">
+    <div class="container">
+      <div class="label fade-up">Mirá cómo funciona</div>
+      <h2 class="fade-up d1">Un agente que trabaja mientras vos cerrás</h2>
+      <p class="vsl-sub fade-up d2">2 minutos que van a cambiar cómo tu inmobiliaria captura leads.</p>
+
+      <div class="vsl-wrap fade-up d3">
+        <div class="vsl-frame">
+          <!--
+            REEMPLAZÁ por tu embed de Loom o YouTube:
+            <iframe src="https://www.loom.com/embed/TU_VIDEO_ID" allowfullscreen></iframe>
+            o:
+            <iframe src="https://www.youtube.com/embed/TU_VIDEO_ID" allowfullscreen></iframe>
+          -->
+          <div class="vsl-placeholder">
+            <div class="play-btn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M5 3l14 9-14 9V3z"/></svg>
+            </div>
+            <p>Tu video de demostración va acá (Loom / YouTube)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- 3. SOCIAL PROOF STATS                 -->
+  <!-- ══════════════════════════════════════ -->
+  <section id="resultados">
+    <div class="container">
+      <div class="section-head fade-up">
+        <div class="label">Resultados reales</div>
+        <h2>Lo que pasa cuando respondés en segundos</h2>
+        <p>Las inmobiliarias que usan Orvo no solo responden más rápido — cierran más.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card fade-up d1">
+          <div class="stat-icon">⚡</div>
+          <div class="big-num">&lt;60s</div>
+          <div class="stat-label">Tiempo de respuesta</div>
+          <div class="stat-desc">El agente responde a cada lead en menos de 1 minuto, sin importar el día ni la hora.</div>
+        </div>
+        <div class="stat-card fade-up d2">
+          <div class="stat-icon">📈</div>
+          <div class="big-num">3x</div>
+          <div class="stat-label">Más leads calificados</div>
+          <div class="stat-desc">Triplicamos los leads que llegan calificados a tu equipo porque el agente filtra, no vos.</div>
+        </div>
+        <div class="stat-card fade-up d3">
+          <div class="stat-icon">🔑</div>
+          <div class="big-num">+38%</div>
+          <div class="stat-label">Operaciones cerradas</div>
+          <div class="stat-desc">Las inmobiliarias con Orvo cierran más porque no pierden leads fuera de horario ni por demoras.</div>
+        </div>
+        <div class="stat-card fade-up d4">
+          <div class="stat-icon">🕐</div>
+          <div class="big-num">24/7</div>
+          <div class="stat-label">Sin perder un lead</div>
+          <div class="stat-desc">Domingos a las 11 PM, feriados, vacaciones. El agente nunca duerme ni pide días libres.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- 4. CASE STUDY                         -->
+  <!-- ══════════════════════════════════════ -->
+  <section id="caso">
+    <div class="container">
+      <div class="section-head fade-up">
+        <div class="label">Caso de éxito</div>
+        <h2>De perder leads a triplicar visitas agendadas</h2>
+        <p>Cómo Grupo Palermo automatizó la calificación de leads y cerró un 38% más de operaciones.</p>
+      </div>
+
+      <div class="case-card fade-up d1">
+        <div class="case-top">
+          <div class="case-left">
+            <div class="case-co-tag">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+              Caso real · En producción
+            </div>
+            <h3>Grupo Palermo — Inmobiliaria CABA</h3>
+            <p>
+              Grupo Palermo recibía 80–100 consultas por semana vía WhatsApp, portales y formularios web. Su equipo de 3 asesores tardaba entre 4 y 24 horas en responder, y perdía hasta el 60% de esos leads antes de poder calificarlos.
+            </p>
+            <br>
+            <p>
+              Con Orvo implementamos un agente que responde en menos de 1 minuto, califica presupuesto, zona y urgencia, y agenda visitas automáticamente — solo escala al equipo los leads que están listos para avanzar.
+            </p>
+          </div>
+          <div class="case-badges">
+            <div class="result-badge">
+              <strong>3x</strong>
+              <span>leads calificados<br>por semana</span>
+            </div>
+            <div class="result-badge">
+              <strong>-95%</strong>
+              <span>tiempo de<br>respuesta</span>
+            </div>
+            <div class="result-badge">
+              <strong>+38%</strong>
+              <span>operaciones<br>cerradas</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-bottom">
+          <p class="case-quote">
+            "Antes perdíamos leads todos los días porque no dábamos abasto para responder. Ahora el agente responde solo y nos pasa solo los que están listos para ver propiedades. Cerramos más sin sumar ni una persona al equipo."
+          </p>
+          <div class="case-author">
+            <div class="author-av">MG</div>
+            <div>
+              <div class="author-name">Martín Gómez</div>
+              <div class="author-role">Dueño, Grupo Palermo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- 5. HOW IT WORKS                       -->
+  <!-- ══════════════════════════════════════ -->
+  <section id="como">
+    <div class="container">
+      <div class="section-head center fade-up">
+        <div class="label">El proceso</div>
+        <h2>Tres pasos para nunca perder un lead</h2>
+        <p>Sin meses de implementación. Sin equipos de IT. En menos de una semana tu agente está activo.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="steps-connector"></div>
+
+        <div class="step-card fade-up d1">
+          <div class="step-num">01</div>
+          <h3>Diagnóstico de 30 minutos</h3>
+          <p>Nos reunimos, entendemos cómo llegan tus leads hoy, dónde se pierden y cuál es tu proceso de calificación ideal.</p>
+          <span class="step-tag">Sin costo, sin compromiso</span>
+        </div>
+
+        <div class="step-card fade-up d2">
+          <div class="step-num">02</div>
+          <h3>Configuramos tu agente en 5 días</h3>
+          <p>Armamos un agente entrenado en tu catálogo de propiedades, tus criterios de calificación y el tono de tu marca.</p>
+          <span class="step-tag">A medida. No genérico.</span>
+        </div>
+
+        <div class="step-card fade-up d3">
+          <div class="step-num">03</div>
+          <h3>Leads calificados. Más cierres.</h3>
+          <p>Tu agente responde, califica y agenda visitas automáticamente. Tu equipo solo habla con los que están listos.</p>
+          <span class="step-tag">Resultados en la primera semana</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- 6. CALENDAR EMBED                     -->
+  <!-- ══════════════════════════════════════ -->
+  <section id="agendar">
+    <div class="container">
+      <div class="agendar-grid">
+
+        <!-- Left: copy -->
+        <div class="agendar-left fade-up">
+          <div class="label">Agendá una llamada</div>
+          <h2>30 minutos que te muestran exactamente qué resultado podés esperar</h2>
+          <p>
+            En la llamada analizamos tu operación, te mostramos cómo funcionaría un agente para tu inmobiliaria y te damos una estimación real de resultados — sin tecnicismos ni venta agresiva.
+          </p>
+          <ul class="agendar-bullets">
+            <li>
+              <span class="check-circle">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              Análisis gratuito de tu operación actual
+            </li>
+            <li>
+              <span class="check-circle">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              Demo en vivo del agente adaptado a tu negocio
+            </li>
+            <li>
+              <span class="check-circle">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              Estimación de resultados y ROI esperado
+            </li>
+            <li>
+              <span class="check-circle">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              Sin compromiso. Sin contrato de permanencia.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: calendar -->
+        <div class="fade-up d2">
+          <div class="cal-box">
+            <!-- Calendly inline widget begin -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/juanagrippino/website-services?primary_color=d8dde4" style="min-width:320px;height:700px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <!-- Calendly inline widget end -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- 7. FINAL CTA                          -->
+  <!-- ══════════════════════════════════════ -->
+  <section id="cta-final">
+    <div class="container">
+      <h2 class="fade-up">¿Cuántos leads perdiste esta semana?</h2>
+      <p class="fade-up d1">
+        Cada lead sin respuesta es una operación que se va a la competencia.
+        Cerrá esa brecha hoy — sin contratar más gente.
+      </p>
+      <div class="fade-up d2">
+        <a href="#agendar" class="btn-white">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Agendá una llamada gratuita
+        </a>
+        <p class="cta-trust">Sin compromiso · Sin permanencia · Resultados en la primera semana</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a class="footer-logo" href="#">
+          <svg width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 4 A20 20 0 1 1 4 24" stroke="white" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+            <line x1="24" y1="4" x2="4" y2="24" stroke="#00B4A6" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="4" cy="24" r="3.8" fill="#00B4A6"/>
+          </svg>
+          Orvo
+        </a>
+        <p>© 2025 Orvo. Agentes de IA para inmobiliarias argentinas.</p>
+        <p>Buenos Aires, Argentina</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Fade-up on scroll
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
+    );
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Nav shadow on scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 12);
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
