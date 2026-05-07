@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Repuestos Automotrices — Orvo Agentes de IA</title>
+  <meta name="description" content="Automatización de stock y pedidos para mayoristas de repuestos automotrices. Agentes de IA que responden consultas y cierran pedidos por WhatsApp 24/7." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --amber: #f59e0b;
+      --amber-light: rgba(245,158,11,0.12);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --bg-deep: #0f172a;
+      --bg-card: #1e293b;
+      --border: rgba(255,255,255,0.08);
+      --border-amber: rgba(245,158,11,0.25);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-deep);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
+
+    /* Nav */
+    .back-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .back-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .back-nav a:hover { color: white; }
+    .back-nav .separator { color: #334155; }
+
+    /* Back to top */
+    .top-bar {
+      text-align: center;
+      padding: 0.75rem;
+      background: rgba(0,0,0,0.3);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8rem;
+    }
+    .top-bar a { color: var(--amber); text-decoration: none; font-weight: 600; }
+    .top-bar a:hover { text-decoration: underline; }
+
+    /* Hero */
+    .rp-hero {
+      text-align: center;
+      padding: 80px 0 60px;
+      position: relative;
+    }
+    .rp-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 30% 10%, rgba(245,158,11,0.15) 0, transparent 50%),
+        radial-gradient(circle at 70% 90%, rgba(37,99,235,0.08) 0, transparent 50%);
+      pointer-events: none;
+    }
+    .rp-hero > * { position: relative; }
+    .rp-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      background: var(--amber-light);
+      border: 1px solid var(--border-amber);
+      border-radius: 100px;
+      padding: 0.3rem 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+    .rp-label .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--amber);
+      box-shadow: 0 0 0 0 rgba(245,158,11,0.5);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(245,158,11,0.5); }
+      70% { box-shadow: 0 0 0 8px rgba(245,158,11,0); }
+      100% { box-shadow: 0 0 0 0 rgba(245,158,11,0); }
+    }
+    .rp-hero h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.08;
+      color: white;
+      margin-bottom: 1.2rem;
+    }
+    .rp-hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--amber) 0%, #fbbf24 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .rp-hero p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+    .btn-amber {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: var(--amber);
+      color: #1a1a2e;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.9rem 1.8rem;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-amber:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(245,158,11,0.3);
+    }
+
+    /* Case Study */
+    section { padding: 80px 0; }
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.7rem;
+    }
+    .section-label .label-text {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .case-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid var(--border-amber);
+      border-radius: 22px;
+      overflow: hidden;
+      backdrop-filter: blur(20px);
+    }
+    .case-top {
+      padding: 2.5rem 3rem 2rem;
+      display: flex;
+      gap: 1.75rem;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .case-mark {
+      width: 78px; height: 78px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 2.1rem;
+      letter-spacing: -0.04em;
+      color: var(--amber);
+      flex-shrink: 0;
+    }
+    .case-top h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: white;
+      margin-bottom: 0.3rem;
+    }
+    .case-top .sub {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .case-body {
+      padding: 2.25rem 3rem;
+    }
+    .case-body p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #cbd5e1;
+      max-width: 700px;
+    }
+    .case-body p + p { margin-top: 1rem; }
+    .case-body strong { color: white; }
+
+    /* Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    .feat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+    .feat-card .icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .feat-card h3 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.35rem;
+    }
+    .feat-card p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* Metrics */
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-top: 2rem;
+    }
+    .metric {
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+      background: rgba(255,255,255,0.02);
+    }
+    .metric strong {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: var(--amber);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .metric span { font-size: 0.78rem; color: var(--muted); }
+
+    /* CTA */
+    .cta-section {
+      text-align: center;
+      padding: 80px 0 100px;
+    }
+    .cta-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #2563eb 120%);
+      border-radius: 24px;
+      padding: 3.5rem 2.5rem;
+      color: white;
+    }
+    .cta-box h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin: 0 auto 0.85rem;
+      max-width: 560px;
+    }
+    .cta-box p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1rem;
+      max-width: 480px;
+      margin: 0 auto 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .case-top { padding: 1.75rem; }
+      .case-body { padding: 1.75rem; }
+      .features-grid { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    🤖 ¿Querés ver todos nuestros casos? &nbsp;<a href="https://orvo.space">← Volver a orvo.space</a>
+  </div>
+
+  <header class="rp-hero">
+    <div class="container">
+      <div class="rp-label"><span class="dot"></span> Demo funcional en producción</div>
+      <h1>Automatización de Stock y Pedidos<br>para <em>Mayoristas de Repuestos</em></h1>
+      <p>Tu equipo responde consultas en 10 min o pierde la venta. Nuestro agente responde en 5 seg, confirmando stock real y cerrando pedidos — 24 horas, 7 días.</p>
+      <a href="https://calendly.com/juanagrippino/website-services?primary_color=d8dde4" class="btn-amber">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Ver si funciona para tu empresa
+      </a>
+    </div>
+  </header>
+
+  <section id="caso">
+    <div class="container">
+      <div class="section-label"><span class="label-text">◆ CASO DE DEMOSTRACIÓN · AGENTE EN PRODUCCIÓN</span></div>
+      <div class="case-card">
+        <div class="case-top">
+          <div class="case-mark">R</div>
+          <div>
+            <h2>Distribuidora Demo — Repuestos Automotrices</h2>
+            <div class="sub">Mayorista · Argentina · +5.000 códigos de partes</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <p>
+            Un taller mecánico escribe preguntando si tienen un <strong>amortiguador delantero para un Corsa Classic</strong>. Si el mostrador humano tarda 10 minutos en buscar el código interno y confirmar stock, <strong>el taller ya compró al de la vuelta</strong>.
+          </p>
+          <p>
+            El agente <strong>cruza el código OEM o el nombre del repuesto contra el inventario real</strong>, confirma disponibilidad y precios por lista, genera el pedido y envía el link de pago — todo en menos de 60 segundos, sin intervención humana.
+          </p>
+          <p>
+            Funciona con tu WhatsApp actual, se conecta a tu base de productos, y escala las consultas complejas a tu equipo solo cuando hace falta.
+          </p>
+
+          <div class="features-grid">
+            <div class="feat-card">
+              <div class="icon"></div>
+              <h3>Búsqueda inteligente</h3>
+              <p>Entiende códigos OEM, internos o nombres informales. No necesita que el cliente sepa el código exacto.</p>
+            </div>
+            <div class="feat-card">
+              <div class="icon">🚚</div>
+              <h3>Stock multi-sucursal</h3>
+              <p>Muestra disponibilidad en tiempo real por sucursal y sugiere la entrega más rápida.</p>
+            </div>
+            <div class="feat-card">
+              <div class="icon">📄</div>
+              <h3>Pedido + Factura B2B</h3>
+              <p>Genera el pedido, confirma el total y emite la factura — todo sin intervención humana.</p>
+            </div>
+          </div>
+
+          <div class="metrics">
+            <div class="metric">
+              <strong>&lt;5 seg</strong>
+              <span>Tiempo de respuesta a consultas de stock</span>
+            </div>
+            <div class="metric">
+              <strong>24/7</strong>
+              <span>Operativo sin horarios ni feriados</span>
+            </div>
+            <div class="metric">
+              <strong>0 hs</strong>
+              <span>Horas manuales del equipo en consultas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:0.5rem;">¿Querés ver cómo quedaría con tus propios productos?</p>
+        <h2>Agendá una demo de 30 minutos</h2>
+        <p>Te mostramos en vivo cómo un agente respondería consultas de tu propio catálogo.</p>
+        <a href="https://calendly.com/juanagrippino/website-services?primary_color=d8dde4" class="btn-amber" style="background:white;color:#1e3a8a;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Agendar demo gratuita
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
