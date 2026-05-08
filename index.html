@@ -1522,6 +1522,11 @@
           </div>
         </div>
       </div>
+
+      <!-- Demo interactivo -->
+      <div id="art-wrap" class="fade-up d2" style="margin-top: 2.5rem; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.6); position: relative;">
+        <iframe id="art-frame" src="demo-artemea.html" loading="lazy" title="Demo agente Artemea" style="width: 1280px; height: 720px; border: none; display: block; transform-origin: top left;" scrolling="no"></iframe>
+      </div>
     </div>
   </section>
 
@@ -1583,6 +1588,13 @@
               <span>Pedidos sin intervención humana</span>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- Demo interactivo -->
+      <div class="fade-up d2" style="margin-top: 2.5rem; display: flex; justify-content: center;">
+        <div id="rep-wrap" style="border-radius: 14px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.6); position: relative;">
+          <iframe id="rep-frame" src="repuestos.html" loading="lazy" title="Demo agente Repuestos" style="width: 500px; height: 900px; border: none; display: block; transform-origin: top left;" scrolling="no"></iframe>
         </div>
       </div>
     </div>
@@ -1909,6 +1921,29 @@
     );
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
+    // Scale Artemea demo (landscape 1280x720)
+    function scaleArtemea() {
+      var w = document.getElementById('art-wrap');
+      var f = document.getElementById('art-frame');
+      if (!w || !f) return;
+      var s = w.offsetWidth / 1280;
+      f.style.transform = 'scale(' + s + ')';
+      w.style.height = Math.ceil(720 * s) + 'px';
+    }
+    // Scale Repuestos demo (phone 500x900, max 340px wide)
+    function scaleRep() {
+      var w = document.getElementById('rep-wrap');
+      var f = document.getElementById('rep-frame');
+      if (!w || !f) return;
+      var maxW = Math.min(340, window.innerWidth - 40);
+      var s = maxW / 500;
+      f.style.transform = 'scale(' + s + ')';
+      w.style.width = maxW + 'px';
+      w.style.height = Math.ceil(900 * s) + 'px';
+    }
+    scaleArtemea(); scaleRep();
+    window.addEventListener('resize', function() { scaleArtemea(); scaleRep(); }, { passive: true });
+
     // Nav shadow on scroll
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
@@ -1918,3 +1953,4 @@
 
 </body>
 </html>
+
