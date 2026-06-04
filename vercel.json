@@ -2,16 +2,8 @@
   "outputDirectory": ".",
   "routes": [
     {
-      "src": "/repuestos(/)?",
-      "dest": "/repuestos.html"
-    },
-    {
       "src": "/demo-artemea.html",
       "dest": "/demo-artemea.html"
-    },
-    {
-      "src": "/demo-repuestos.html",
-      "dest": "/demo-repuestos.html"
     },
     {
       "src": "/(.*)",
