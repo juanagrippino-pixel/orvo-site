@@ -277,7 +277,11 @@
     .cta .section-head { position: relative; }
     .cta .eyebrow { background: rgba(255,247,231,.08); border-color: rgba(255,247,231,.14); color: #bce7c7; }
     .cta .section-head p { color: rgba(255,247,231,.67); }
-    .calendly-card { position: relative; background: var(--white); border-radius: 28px; padding: 12px; box-shadow: 0 30px 90px rgba(0,0,0,.28); }
+    .demo-card { position: relative; background: var(--white); color: var(--ink); border-radius: 28px; padding: 28px; box-shadow: 0 30px 90px rgba(0,0,0,.28); display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px; }
+    .demo-card h3 { font-size: clamp(26px, 3vw, 40px); line-height: 1.03; letter-spacing: -.055em; font-weight: 650; }
+    .demo-card p { margin-top: 12px; color: var(--muted); max-width: 610px; }
+    .demo-card .btn { min-width: 190px; }
+    @media (max-width: 760px) { .demo-card { grid-template-columns: 1fr; } .demo-card .btn { width: 100%; } }
 
     .faq { display: grid; gap: 10px; max-width: 860px; margin-inline: auto; }
     details { background: rgba(255,253,248,.72); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
@@ -485,9 +489,12 @@
         </div>
         <p>En la llamada revisamos módulos, fuentes disponibles y el primer piloto posible para tu negocio.</p>
       </div>
-      <div class="calendly-card reveal">
-        <div class="calendly-inline-widget" data-url="https://calendly.com/juanagrippino/website-services?primary_color=236c43" style="min-width:320px;height:720px;"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <div class="demo-card reveal">
+        <div>
+          <h3>En 30 minutos vemos si hay piloto.</h3>
+          <p>Traé tu operación actual: canales de venta, stock, atención, facturación y caja. Salimos con el primer mapa de módulos y casos para implementar Orvo sin migración eterna.</p>
+        </div>
+        <a class="btn btn-dark" href="https://calendly.com/juanagrippino/website-services" target="_blank" rel="noopener noreferrer">Agendar demo</a>
       </div>
     </div>
   </section>
