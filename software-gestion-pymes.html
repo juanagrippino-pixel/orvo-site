@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software de gestión para PyMEs: qué ordenar primero | Orvo</title>
+  <meta name="description" content="Guía breve para evaluar software de gestión para PyMEs argentinas: qué procesos ordenar primero, qué señales conectar y cómo sumar agentes de IA sin una migración eterna." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://orvo.space/software-gestion-pymes" />
+
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://orvo.space/software-gestion-pymes" />
+  <meta property="og:title" content="Software de gestión para PyMEs: qué ordenar primero" />
+  <meta property="og:description" content="Una guía práctica para PyMEs argentinas que necesitan ordenar ventas, stock, atención, facturación y caja con evidencia real." />
+  <meta property="og:image" content="https://orvo.space/assets/icon-512.png" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="Orvo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Software de gestión para PyMEs: qué ordenar primero" />
+  <meta name="twitter:description" content="Qué mirar antes de elegir software de gestión para tu PyME y cómo usar agentes de IA con control operativo." />
+  <meta name="twitter:image" content="https://orvo.space/assets/icon-512.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Orvo",
+        "item": "https://orvo.space/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Software de gestión para PyMEs",
+        "item": "https://orvo.space/software-gestion-pymes"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Software de gestión para PyMEs: qué ordenar primero",
+    "description": "Guía breve para evaluar software de gestión para PyMEs argentinas: procesos, señales y uso de agentes de IA con control operativo.",
+    "mainEntityOfPage": "https://orvo.space/software-gestion-pymes",
+    "inLanguage": "es-AR",
+    "datePublished": "2026-06-12",
+    "dateModified": "2026-06-12",
+    "author": {
+      "@type": "Organization",
+      "name": "Orvo"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Orvo",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://orvo.space/assets/icon-512.png"
+      }
+    },
+    "image": "https://orvo.space/assets/icon-512.png"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Hay que cambiar todo el sistema para empezar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No necesariamente. Para una PyME suele rendir más empezar por una capa operativa que conecte ventas, stock, atención, facturación o caja sobre fuentes existentes, y recién después decidir qué migrar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Sirve si vendés por ecommerce, Tiendanube o WhatsApp?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, si el software puede leer esos canales como fuentes reales de la operación. Lo importante es que los pedidos, el stock y las alertas queden conectados a una consola de trabajo y no dispersos en mensajes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué aportan los agentes de IA en una PyME?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aportan monitoreo, priorización y preparación de contexto. Los agentes pueden detectar casos repetitivos, resumir evidencia y sugerir próximos pasos, mientras el operador mantiene el control de la decisión."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    @font-face {
+      font-family: 'Tobias';
+      src: url('assets/fonts/Tobias-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('assets/fonts/SuisseIntl-Regular.ttf') format('truetype');
+      font-weight: 400 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Suisse Intl Book';
+      src: url('assets/fonts/SuisseIntl-Book.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Geist Mono HR';
+      src: url('assets/fonts/GeistMono_Variable.p.17jn9btb_52pq.woff2') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; }
+    :root {
+      --bg: #f7f5ef;
+      --paper: #fffdf7;
+      --paper-2: #efede5;
+      --ink: #0b0f0e;
+      --ink-2: #232826;
+      --muted: #5f6862;
+      --line: rgba(11,15,14,.12);
+      --green: #163f2e;
+      --green-soft: #dfeee4;
+      --white: #ffffff;
+      --shadow: 0 28px 80px rgba(20,25,22,.10);
+      --shadow-soft: 0 14px 40px rgba(20,25,22,.07);
+      --sans: 'Suisse Intl', Arial, sans-serif;
+      --body-book: 'Suisse Intl Book', 'Suisse Intl', Arial, sans-serif;
+      --display: 'Tobias', Georgia, serif;
+      --mono: 'Geist Mono HR', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body-book);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(11,15,14,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(11,15,14,.03) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.42), transparent 68%);
+      z-index: -1;
+    }
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; max-width: 100%; }
+    .container { width: min(1100px, calc(100% - 44px)); margin-inline: auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(247,245,239,.86);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-family: var(--sans);
+      font-weight: 760;
+      letter-spacing: -.04em;
+    }
+    .brand img { width: 38px; height: 38px; object-fit: contain; }
+    .brand-name { font-size: 21px; line-height: 1; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: var(--ink-2);
+      font-size: 14px;
+      font-weight: 520;
+    }
+    .nav-links a { opacity: .82; }
+    .nav-links a:hover { opacity: 1; }
+
+    .hero { padding: 84px 0 28px; }
+    .eyebrow {
+      font-family: var(--mono);
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 6px rgba(22,63,46,.10);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .94fr) minmax(300px, .72fr);
+      gap: 36px;
+      align-items: start;
+    }
+    h1 {
+      margin-top: 18px;
+      font-family: var(--display);
+      font-size: clamp(52px, 7vw, 94px);
+      line-height: .96;
+      letter-spacing: -.05em;
+      font-weight: 400;
+      max-width: 820px;
+    }
+    h1 span { color: var(--green); }
+    .lead {
+      margin-top: 24px;
+      max-width: 690px;
+      color: var(--ink-2);
+      font-size: clamp(18px, 1.8vw, 22px);
+      line-height: 1.5;
+      letter-spacing: -.018em;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 650;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-dark {
+      background: var(--ink);
+      color: var(--paper);
+      box-shadow: 0 16px 34px rgba(11,15,14,.16);
+    }
+    .btn-light {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      color: var(--ink);
+    }
+    .hero-card {
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: rgba(255,253,247,.8);
+      box-shadow: var(--shadow-soft);
+      padding: 24px;
+    }
+    .hero-card h2 {
+      font-family: var(--display);
+      font-size: 34px;
+      line-height: 1.02;
+      letter-spacing: -.04em;
+      font-weight: 400;
+    }
+    .hero-card p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .signal-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .signal-list li {
+      list-style: none;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--white);
+    }
+    .signal-list li b {
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-family: var(--mono);
+      font-size: 11px;
+    }
+
+    section { padding: 72px 0; }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(280px, .48fr);
+      gap: 42px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+    .section-head h2 {
+      margin-top: 16px;
+      font-family: var(--display);
+      font-size: clamp(36px, 4.8vw, 72px);
+      line-height: .98;
+      letter-spacing: -.045em;
+      font-weight: 400;
+    }
+    .section-head p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      overflow: hidden;
+      background: var(--line);
+      box-shadow: var(--shadow-soft);
+    }
+    .card {
+      background: var(--paper);
+      padding: 26px;
+      min-height: 220px;
+    }
+    .card .num {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .card h3 {
+      margin-top: 44px;
+      font-size: 28px;
+      line-height: 1.08;
+      letter-spacing: -.04em;
+      font-weight: 500;
+    }
+    .card p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .note-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .note {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255,253,247,.82);
+      box-shadow: var(--shadow-soft);
+    }
+    .note h3 {
+      font-size: 22px;
+      line-height: 1.08;
+      letter-spacing: -.03em;
+    }
+    .note p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .checklist {
+      display: grid;
+      gap: 12px;
+      max-width: 920px;
+    }
+    .checklist li {
+      list-style: none;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--paper);
+      box-shadow: var(--shadow-soft);
+    }
+    .checklist li strong {
+      display: block;
+      font-size: 16px;
+      letter-spacing: -.015em;
+    }
+    .checklist li span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .faq {
+      display: grid;
+      gap: 10px;
+      max-width: 900px;
+      margin-inline: auto;
+    }
+    details {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 19px 20px;
+      font-weight: 650;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      color: var(--green);
+      font-size: 22px;
+      line-height: 1;
+    }
+    details[open] summary::after { content: "–"; }
+    details p {
+      padding: 0 20px 19px;
+      color: var(--muted);
+    }
+    .cta {
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: 42px 42px 0 0;
+      padding: 86px 0;
+    }
+    .cta .section-head p { color: rgba(255,253,247,.66); }
+    .demo-card {
+      background: var(--paper);
+      color: var(--ink);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 30px 90px rgba(0,0,0,.28);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 24px;
+    }
+    .demo-card h3 {
+      font-family: var(--display);
+      font-size: clamp(34px, 3.7vw, 54px);
+      line-height: 1;
+      letter-spacing: -.045em;
+      font-weight: 400;
+    }
+    .demo-card p {
+      margin-top: 13px;
+      color: var(--muted);
+      max-width: 650px;
+    }
+    footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .foot img { width: 112px; height: auto; }
+
+    @media (max-width: 940px) {
+      .hero-grid,
+      .section-head,
+      .note-grid,
+      .demo-card {
+        grid-template-columns: 1fr;
+      }
+      .cards { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .container { width: min(100% - 28px, 1100px); }
+      .hero { padding-top: 48px; }
+      h1 { font-size: clamp(42px, 13vw, 62px); }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="Volver al inicio de Orvo">
+        <img src="/assets/orvo-logo-mark.png" alt="" />
+        <span class="brand-name">orvo</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación de apoyo">
+        <a href="/">Inicio</a>
+        <a href="/#gestion">Gestión PyME</a>
+        <a href="/#agendar">Agendar demo</a>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Guía breve para PyMEs argentinas</div>
+          <h1>Software de gestión para <span>PyMEs</span>: qué ordenar primero.</h1>
+          <p class="lead">Antes de sumar más herramientas, conviene resolver una pregunta más básica: dónde se mezclan hoy ventas, stock, atención, facturación y caja. Un software de gestión útil para PyMEs no suma ruido; arma una fuente diaria de trabajo con evidencia.</p>
+          <div class="hero-actions">
+            <a class="btn btn-dark" href="https://calendly.com/juanagrippino/website-services" target="_blank" rel="noopener noreferrer">Agendar demo</a>
+            <a class="btn btn-light" href="/">Ver la plataforma</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Señales iniciales para evaluar software de gestión">
+          <h2>Las primeras señales que una PyME necesita ordenar.</h2>
+          <p>Cuando estas señales viven separadas, el problema no es solo de visibilidad: también se vuelve más lenta cada decisión operativa.</p>
+          <ul class="signal-list">
+            <li><b>01</b><span>Pedidos y ventas por canal, incluyendo ecommerce o Tiendanube.</span></li>
+            <li><b>02</b><span>Stock crítico y productos con riesgo de quiebre.</span></li>
+            <li><b>03</b><span>Atención pendiente, reclamos y escalados por WhatsApp.</span></li>
+            <li><b>04</b><span>Facturación, cobranzas y caja con estado visible.</span></li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Qué debería resolver</div>
+            <h2>No se trata de tener más módulos. Se trata de ordenar el trabajo real.</h2>
+          </div>
+          <p>Para una PyME argentina, el software de gestión suele fallar cuando cada área queda correcta por separado pero nadie ve el caso operativo completo. Ahí es donde una consola operativa tiene más valor que otra pantalla de reportes.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="num">A</div><h3>Ventas y pedidos.</h3><p>Ver caídas, demoras o desvíos por canal sin perseguir números en varias herramientas.</p></article>
+          <article class="card"><div class="num">B</div><h3>Stock y reposición.</h3><p>Entender qué producto necesita acción ahora, antes de que una campaña o una promo agrande el problema.</p></article>
+          <article class="card"><div class="num">C</div><h3>Atención y escalados.</h3><p>Separar alertas urgentes de conversaciones repetitivas y dejar el contexto guardado fuera del chat.</p></article>
+          <article class="card"><div class="num">D</div><h3>Facturación y caja.</h3><p>Tener una lectura operativa de readiness y pendientes, no solo un cierre tardío después del problema.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Cómo evaluarlo</div>
+            <h2>Cuatro preguntas para elegir mejor.</h2>
+          </div>
+          <p>Si una herramienta responde bien estas preguntas, probablemente esté más cerca de ayudarte a operar que de darte otro dashboard para mirar de reojo.</p>
+        </div>
+        <ul class="checklist">
+          <li><strong>¿Muestra la fuente del dato?</strong><span>Una PyME necesita saber de dónde sale cada recomendación y qué tan fresco está el dato antes de decidir.</span></li>
+          <li><strong>¿Prioriza casos o solo acumula métricas?</strong><span>El valor operativo aparece cuando el sistema dice qué revisar primero, no cuando solo suma KPIs.</span></li>
+          <li><strong>¿Permite trabajar con canales actuales?</strong><span>Si vendés por ecommerce, Tiendanube, atención manual o WhatsApp, la herramienta debería convivir con eso en vez de pedir una migración total desde el día uno.</span></li>
+          <li><strong>¿Separa alertas del sistema de trabajo?</strong><span>WhatsApp puede ser útil para avisar, pero la operación necesita una app que guarde estados, evidencia y decisiones.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Agentes de IA para PyMEs</div>
+            <h2>Qué cambia cuando sumás agentes con control.</h2>
+          </div>
+          <p>Los agentes no reemplazan el criterio del operador. Sirven para revisar más seguido, detectar antes y preparar mejor el contexto de una decisión repetitiva.</p>
+        </div>
+        <div class="note-grid">
+          <article class="note"><h3>Monitoreo continuo.</h3><p>Los agentes revisan señales operativas y marcan cambios relevantes sin esperar al cierre manual del día.</p></article>
+          <article class="note"><h3>Casos con evidencia.</h3><p>Cada alerta útil necesita mostrar fuente, prioridad y próximo paso sugerido. Si falta un dato, se marca.</p></article>
+          <article class="note"><h3>App-first, no chat-first.</h3><p>WhatsApp puede empujar briefs o alertas, pero el control operativo queda en la consola de trabajo.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Preguntas frecuentes</div>
+            <h2>Antes de cambiar de herramienta</h2>
+          </div>
+          <p>Estas dudas aparecen seguido cuando una PyME siente que la operación ya no entra bien en planillas, chats y sistemas aislados.</p>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>¿Hay que cambiar todo el sistema para empezar?</summary>
+            <p>No. En muchos casos conviene empezar por una capa operativa que conecte fuentes existentes, muestre casos prioritarios y recién después defina qué parte vale la pena migrar.</p>
+          </details>
+          <details>
+            <summary>¿Sirve si vendés por ecommerce, Tiendanube o WhatsApp?</summary>
+            <p>Sí, siempre que esas señales entren como parte de la operación real. El problema aparece cuando cada canal queda separado y nadie ve el estado conjunto del negocio.</p>
+          </details>
+          <details>
+            <summary>¿Qué aportan los agentes de IA en una PyME?</summary>
+            <p>Aportan monitoreo, priorización y preparación de contexto. Ayudan a encontrar antes los casos repetitivos y a decidir con evidencia, sin inventar métricas.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Demo</div>
+            <h2>Si querés ordenar primero y migrar después, tiene más sentido empezar por un piloto.</h2>
+          </div>
+          <p>En la llamada revisamos qué módulos conviene conectar primero, qué señales ya existen y dónde un agente puede ahorrar más tiempo operativo.</p>
+        </div>
+        <div class="demo-card">
+          <div>
+            <h3>Veamos si Orvo encaja en tu operación.</h3>
+            <p>Podemos mapear ventas, stock, atención, facturación y caja en una primera capa útil para tu PyME, con WhatsApp solo como canal de alertas y briefs.</p>
+          </div>
+          <a class="btn btn-dark" href="https://calendly.com/juanagrippino/website-services" target="_blank" rel="noopener noreferrer">Agendar demo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <img src="/assets/orvo-logo-wordmark.png" alt="Orvo" />
+      <span>Centro operativo con agentes para PyMEs argentinas.</span>
+      <span><a href="/">Volver al inicio</a></span>
+    </div>
+  </footer>
+</body>
+</html>

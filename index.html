@@ -360,6 +360,26 @@
     @media (max-width: 760px) { .demo-card { grid-template-columns: 1fr; } .demo-card .btn { width: 100%; } }
 
     .faq { display: grid; gap: 10px; max-width: 900px; margin-inline: auto; }
+    .resource-strip {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255,253,247,.76);
+      box-shadow: var(--shadow-soft);
+    }
+    .resource-strip p {
+      color: var(--ink-2);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    .resource-strip a {
+      color: var(--green);
+      font-weight: 650;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.16em;
+    }
     details { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
     summary { cursor: pointer; list-style: none; padding: 19px 20px; font-weight: 650; display: flex; justify-content: space-between; gap: 18px; }
     summary::-webkit-details-marker { display: none; }
@@ -569,6 +589,9 @@
         <article class="card"><div><div class="num">A</div><h3>Software de gestión, repensado.</h3><p>En vez de módulos aislados, una consola operativa que ordena ventas, stock, atención, facturación y caja para PyMEs argentinas.</p></div></article>
         <article class="card"><div><div class="num">B</div><h3>Agentes de IA para PyMEs.</h3><p>Agentes que monitorean la operación, priorizan casos y preparan recomendaciones con evidencia. Sin reemplazar el criterio del operador.</p></div></article>
         <article class="card"><div><div class="num">C</div><h3>Automatización operativa con control.</h3><p>Para comercios y ecommerce —con Tiendanube u otros canales— las alertas llegan por WhatsApp y el control queda en la app.</p></div></article>
+      </div>
+      <div class="resource-strip">
+        <p>¿Estás evaluando software de gestión para tu PyME? <a href="/software-gestion-pymes">Leé una guía corta sobre qué ordenar primero, qué señales conviene conectar y cómo sumar agentes de IA sin arrancar con una migración eterna.</a></p>
       </div>
     </div>
   </section>
