@@ -57,11 +57,36 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet" />
-
   <style>
+    @font-face {
+      font-family: 'Tobias';
+      src: url('assets/fonts/Tobias-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('assets/fonts/SuisseIntl-Regular.ttf') format('truetype');
+      font-weight: 400 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Suisse Intl Book';
+      src: url('assets/fonts/SuisseIntl-Book.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Geist Mono HR';
+      src: url('assets/fonts/GeistMono_Variable.p.17jn9btb_52pq.woff2') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
     *, *::before, *::after { box-sizing: border-box; }
     * { margin: 0; }
     :root {
@@ -70,8 +95,8 @@
       --paper-2: #efede5;
       --ink: #0b0f0e;
       --ink-2: #232826;
-      --muted: #69716c;
-      --muted-2: #8a918c;
+      --muted: #5f6862;
+      --muted-2: #767f79;
       --line: rgba(11,15,14,.12);
       --line-strong: rgba(11,15,14,.22);
       --green: #163f2e;
@@ -80,12 +105,14 @@
       --white: #ffffff;
       --shadow: 0 28px 80px rgba(20,25,22,.10);
       --shadow-soft: 0 14px 40px rgba(20,25,22,.07);
-      --sans: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      --mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      --sans: 'Suisse Intl', Arial, sans-serif;
+      --body-book: 'Suisse Intl Book', 'Suisse Intl', Arial, sans-serif;
+      --display: 'Tobias', Georgia, serif;
+      --mono: 'Geist Mono HR', ui-monospace, SFMono-Regular, Menlo, monospace;
     }
     html { scroll-behavior: smooth; }
     body {
-      font-family: var(--sans);
+      font-family: var(--body-book);
       background: var(--bg);
       color: var(--ink);
       line-height: 1.5;
@@ -121,7 +148,7 @@
       -webkit-backdrop-filter: blur(18px);
     }
     .nav { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
-    .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 760; letter-spacing: -.04em; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-family: var(--sans); font-weight: 760; letter-spacing: -.04em; }
     .brand img { width: 38px; height: 38px; object-fit: contain; }
     .brand-name { font-size: 21px; line-height: 1; }
     .nav-links { display: flex; align-items: center; gap: 26px; color: var(--ink-2); font-size: 14px; font-weight: 520; }
@@ -161,10 +188,11 @@
     .hero h1 {
       margin-top: 18px;
       max-width: 820px;
-      font-size: clamp(54px, 7.4vw, 104px);
-      line-height: .9;
-      letter-spacing: -.062em;
-      font-weight: 740;
+      font-family: var(--display);
+      font-size: clamp(56px, 7.4vw, 108px);
+      line-height: .95;
+      letter-spacing: -.052em;
+      font-weight: 400;
     }
     .hero h1 span { color: var(--green); }
     .lead {
@@ -198,7 +226,7 @@
     .case-card { border: 1px solid var(--line); border-radius: 22px; padding: 18px; background: var(--white); }
     .case-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; color: var(--muted); font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .045em; }
     .badge { border: 1px solid var(--line); border-radius: 999px; padding: 5px 9px; color: var(--green); background: var(--green-soft); font-family: var(--sans); font-size: 11px; text-transform: none; letter-spacing: 0; font-weight: 650; }
-    .case-card h3 { margin-top: 16px; font-size: 30px; line-height: 1.02; letter-spacing: -.055em; font-weight: 710; }
+    .case-card h3 { margin-top: 16px; font-family: var(--display); font-size: 32px; line-height: 1.06; letter-spacing: -.035em; font-weight: 400; }
     .case-card p { margin-top: 11px; color: var(--muted); font-size: 14px; }
     .evidence { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
     .evidence div { border: 1px solid var(--line); border-radius: 16px; padding: 12px; background: #fbfaf5; }
@@ -215,18 +243,18 @@
 
     section { padding: 74px 0; }
     .section-head { display: grid; grid-template-columns: minmax(0, .95fr) minmax(300px, .44fr); gap: 48px; align-items: end; margin-bottom: 34px; }
-    .section-head h2 { margin-top: 16px; font-size: clamp(34px, 4.8vw, 70px); line-height: .95; letter-spacing: -.055em; font-weight: 720; }
+    .section-head h2 { margin-top: 16px; font-family: var(--display); font-size: clamp(36px, 4.9vw, 74px); line-height: .98; letter-spacing: -.045em; font-weight: 400; }
     .section-head p { color: var(--muted); font-size: 16px; line-height: 1.55; }
     @media (max-width: 820px) { .section-head { grid-template-columns: 1fr; gap: 18px; } }
 
     .manifesto { padding: 90px 0; border-block: 1px solid var(--line); background: rgba(255,253,247,.52); }
-    .manifesto p { max-width: 1030px; font-size: clamp(34px, 5.7vw, 82px); line-height: .97; letter-spacing: -.055em; font-weight: 720; }
+    .manifesto p { max-width: 1030px; font-family: var(--display); font-size: clamp(38px, 6vw, 88px); line-height: .98; letter-spacing: -.045em; font-weight: 400; }
     .manifesto p span { color: var(--green); }
 
     .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; border: 1px solid var(--line); border-radius: 28px; overflow: hidden; background: var(--line); box-shadow: var(--shadow-soft); }
     .card { min-height: 300px; padding: 26px; background: var(--paper); display: flex; flex-direction: column; justify-content: space-between; }
     .num { font-family: var(--mono); color: var(--muted); font-size: 12px; }
-    .card h3 { margin-top: 60px; font-size: 28px; line-height: 1.02; letter-spacing: -.055em; font-weight: 710; }
+    .card h3 { margin-top: 60px; font-family: var(--display); font-size: 31px; line-height: 1.06; letter-spacing: -.035em; font-weight: 400; }
     .card p { margin-top: 14px; color: var(--muted); font-size: 15px; }
     @media (max-width: 900px) { .cards { grid-template-columns: 1fr; } .card { min-height: 220px; } .card h3 { margin-top: 34px; } }
 
@@ -235,7 +263,7 @@
     .platform .eyebrow::before { background: #b9dcc5; box-shadow: 0 0 0 6px rgba(185,220,197,.13); }
     .platform-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 18px; margin-top: 26px; }
     .platform-copy { border: 1px solid rgba(255,253,247,.14); border-radius: 28px; padding: 26px; background: rgba(255,253,247,.055); }
-    .platform-copy h2 { font-size: clamp(34px, 4.3vw, 60px); line-height: .96; letter-spacing: -.055em; font-weight: 720; }
+    .platform-copy h2 { font-family: var(--display); font-size: clamp(36px, 4.5vw, 64px); line-height: .99; letter-spacing: -.045em; font-weight: 400; }
     .platform-copy p { margin-top: 18px; color: rgba(255,253,247,.68); }
     .platform-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; border: 1px solid rgba(255,253,247,.14); border-radius: 28px; overflow: hidden; background: rgba(255,253,247,.14); }
     .platform-item { padding: 22px; min-height: 180px; background: rgba(255,253,247,.06); }
@@ -269,7 +297,7 @@
     @media (max-width: 950px) { .steps { grid-template-columns: 1fr; } .step { min-height: auto; } .step h3 { margin-top: 24px; } }
 
     .quote { padding: 48px; border: 1px solid var(--line); border-radius: 34px; background: var(--paper); box-shadow: var(--shadow-soft); }
-    .quote p { font-size: clamp(32px, 5vw, 70px); line-height: .97; letter-spacing: -.055em; font-weight: 720; max-width: 980px; }
+    .quote p { font-family: var(--display); font-size: clamp(36px, 5.2vw, 78px); line-height: .99; letter-spacing: -.045em; font-weight: 400; max-width: 980px; }
     .quote span { display: block; margin-top: 22px; color: var(--muted); }
 
     .cta { background: var(--ink); color: var(--paper); border-radius: 42px 42px 0 0; padding: 92px 0; }
@@ -277,7 +305,7 @@
     .cta .eyebrow { color: #b9dcc5; }
     .cta .eyebrow::before { background: #b9dcc5; box-shadow: 0 0 0 6px rgba(185,220,197,.13); }
     .demo-card { background: var(--paper); color: var(--ink); border-radius: 30px; padding: 30px; box-shadow: 0 30px 90px rgba(0,0,0,.28); display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px; }
-    .demo-card h3 { font-size: clamp(30px, 3.4vw, 48px); line-height: .98; letter-spacing: -.065em; }
+    .demo-card h3 { font-family: var(--display); font-size: clamp(34px, 3.7vw, 54px); line-height: 1; letter-spacing: -.045em; font-weight: 400; }
     .demo-card p { margin-top: 13px; color: var(--muted); max-width: 650px; }
     @media (max-width: 760px) { .demo-card { grid-template-columns: 1fr; } .demo-card .btn { width: 100%; } }
 
