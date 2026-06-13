@@ -22,6 +22,14 @@
       "dest": "/site.webmanifest"
     },
     {
+      "src": "/gestion-de-pymes",
+      "dest": "/gestion-de-pymes.html"
+    },
+    {
+      "src": "/gestion-de-pymes.html",
+      "dest": "/gestion-de-pymes.html"
+    },
+    {
       "src": "/software-gestion-pymes",
       "dest": "/software-gestion-pymes.html"
     },

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestión de PyMEs: cómo ordenar la operación sin perder control | Orvo</title>
+  <meta name="description" content="Guía práctica sobre gestión de PyMEs argentinas: cómo ordenar ventas, stock, atención, facturación y caja con evidencia, casos priorizados y agentes de IA." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://orvo.space/gestion-de-pymes" />
+
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://orvo.space/gestion-de-pymes" />
+  <meta property="og:title" content="Gestión de PyMEs: cómo ordenar la operación sin perder control" />
+  <meta property="og:description" content="Qué implica gestionar una PyME argentina cuando ventas, stock, atención, facturación y caja viven en sistemas separados." />
+  <meta property="og:image" content="https://orvo.space/assets/icon-512.png" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="Orvo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Gestión de PyMEs: cómo ordenar la operación sin perder control" />
+  <meta name="twitter:description" content="Una guía para PyMEs argentinas que necesitan una gestión más clara sobre ventas, stock, atención, facturación y caja." />
+  <meta name="twitter:image" content="https://orvo.space/assets/icon-512.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Orvo",
+        "item": "https://orvo.space/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Gestión de PyMEs",
+        "item": "https://orvo.space/gestion-de-pymes"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Gestión de PyMEs: cómo ordenar la operación sin perder control",
+    "description": "Guía práctica para entender la gestión de PyMEs argentinas: qué ordenar primero, cómo conectar señales y dónde aportan los agentes de IA.",
+    "mainEntityOfPage": "https://orvo.space/gestion-de-pymes",
+    "inLanguage": "es-AR",
+    "datePublished": "2026-06-13",
+    "dateModified": "2026-06-13",
+    "author": {
+      "@type": "Organization",
+      "name": "Orvo"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Orvo",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://orvo.space/assets/icon-512.png"
+      }
+    },
+    "image": "https://orvo.space/assets/icon-512.png"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Gestión de PyMEs es lo mismo que comprar un ERP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No necesariamente. La gestión de PyMEs mejora cuando ventas, stock, atención, facturación y caja se leen como una misma operación. A veces eso implica un ERP; otras veces conviene empezar por una capa operativa que conecte fuentes existentes y priorice casos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se puede ordenar la gestión sin cambiar todo el sistema?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Muchas PyMEs pueden empezar conectando señales actuales y armando una consola operativa con evidencia, responsables y próximos pasos, antes de encarar una migración completa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué rol cumple WhatsApp en la gestión?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WhatsApp puede servir como canal de alertas o briefs, pero no debería ser la fuente principal de estado. La gestión necesita una app o consola donde queden la evidencia, la prioridad y la trazabilidad del caso."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Dónde entran los agentes de IA para PyMEs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los agentes de IA sirven para monitorear señales operativas, detectar desvíos y preparar contexto con evidencia. No reemplazan al operador: ayudan a decidir antes sobre ventas, stock, atención, facturación y caja."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    @font-face {
+      font-family: 'Tobias';
+      src: url('assets/fonts/Tobias-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('assets/fonts/SuisseIntl-Regular.ttf') format('truetype');
+      font-weight: 400 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Suisse Intl Book';
+      src: url('assets/fonts/SuisseIntl-Book.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Geist Mono HR';
+      src: url('assets/fonts/GeistMono_Variable.p.17jn9btb_52pq.woff2') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; }
+    :root {
+      --bg: #f7f5ef;
+      --paper: #fffdf7;
+      --paper-2: #efede5;
+      --ink: #0b0f0e;
+      --ink-2: #232826;
+      --muted: #5f6862;
+      --line: rgba(11,15,14,.12);
+      --line-strong: rgba(11,15,14,.22);
+      --green: #163f2e;
+      --green-soft: #dfeee4;
+      --white: #ffffff;
+      --shadow: 0 28px 80px rgba(20,25,22,.10);
+      --shadow-soft: 0 14px 40px rgba(20,25,22,.07);
+      --sans: 'Suisse Intl', Arial, sans-serif;
+      --body-book: 'Suisse Intl Book', 'Suisse Intl', Arial, sans-serif;
+      --display: 'Tobias', Georgia, serif;
+      --mono: 'Geist Mono HR', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body-book);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(11,15,14,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(11,15,14,.03) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.42), transparent 68%);
+      z-index: -1;
+    }
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; max-width: 100%; }
+    .container { width: min(1100px, calc(100% - 44px)); margin-inline: auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(247,245,239,.86);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-family: var(--sans);
+      font-weight: 760;
+      letter-spacing: -.04em;
+    }
+    .brand img { width: 38px; height: 38px; object-fit: contain; }
+    .brand-name { font-size: 21px; line-height: 1; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: var(--ink-2);
+      font-size: 14px;
+      font-weight: 520;
+    }
+    .nav-links a { opacity: .82; }
+    .nav-links a:hover { opacity: 1; }
+
+    .hero {
+      padding: 66px 0 40px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 380px);
+      gap: 34px;
+      align-items: center;
+    }
+    .eyebrow {
+      font-family: var(--mono);
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 6px rgba(22,63,46,.10);
+    }
+    h1 {
+      margin-top: 18px;
+      font-family: var(--display);
+      font-size: clamp(52px, 8vw, 88px);
+      line-height: .96;
+      letter-spacing: -.05em;
+      font-weight: 400;
+      max-width: 760px;
+    }
+    h1 span { color: var(--green); }
+    .lead {
+      margin-top: 22px;
+      max-width: 640px;
+      color: var(--ink-2);
+      font-size: clamp(18px, 2vw, 22px);
+    }
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 650;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn-dark {
+      background: var(--ink);
+      color: var(--paper);
+      box-shadow: 0 16px 34px rgba(11,15,14,.16);
+    }
+    .btn-light {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      color: var(--ink);
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 20px 44px rgba(11,15,14,.15); }
+
+    .hero-card,
+    .card,
+    .note,
+    .demo-card,
+    .quote,
+    details {
+      background: rgba(255,253,247,.86);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    .hero-card {
+      padding: 26px;
+      border-radius: 30px;
+    }
+    .hero-card h2 {
+      font-family: var(--sans);
+      font-size: 28px;
+      line-height: 1;
+      letter-spacing: -.05em;
+    }
+    .hero-card p {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .signal-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+      padding: 0;
+    }
+    .signal-list li {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+    .signal-list li:first-child { border-top: 0; padding-top: 0; }
+    .signal-list b {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--green);
+      letter-spacing: .05em;
+    }
+
+    .resource-strip {
+      margin-top: 34px;
+      padding: 18px 22px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      color: var(--ink-2);
+      background: rgba(255,253,247,.38);
+    }
+    .resource-strip a {
+      text-decoration: underline;
+      text-decoration-thickness: .08em;
+      text-underline-offset: .16em;
+    }
+
+    section {
+      padding: 44px 0;
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(280px, .8fr);
+      gap: 30px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+    .section-head h2 {
+      margin-top: 14px;
+      font-family: var(--display);
+      font-size: clamp(38px, 5vw, 58px);
+      line-height: .98;
+      letter-spacing: -.045em;
+      font-weight: 400;
+    }
+    .section-head p {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 560px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .card {
+      border-radius: 28px;
+      padding: 26px;
+      min-height: 220px;
+    }
+    .num {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--green-soft);
+      color: var(--green);
+      font-family: var(--mono);
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+    .card h3,
+    .note h3,
+    .demo-card h3 {
+      font-family: var(--sans);
+      font-size: 28px;
+      line-height: 1;
+      letter-spacing: -.05em;
+      margin-bottom: 14px;
+    }
+    .card p,
+    .note p,
+    .demo-card p,
+    .quote span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .checklist {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      padding: 0;
+    }
+    .checklist li {
+      display: grid;
+      grid-template-columns: minmax(220px, 280px) 1fr;
+      gap: 18px;
+      padding: 18px 22px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,253,247,.78);
+    }
+    .checklist strong {
+      font-family: var(--sans);
+      letter-spacing: -.02em;
+      font-size: 17px;
+      line-height: 1.15;
+    }
+    .checklist span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .note-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .note {
+      border-radius: 26px;
+      padding: 24px;
+      min-height: 210px;
+    }
+
+    .quote {
+      border-radius: 32px;
+      padding: 34px;
+      display: grid;
+      gap: 14px;
+    }
+    .quote p {
+      font-family: var(--display);
+      font-size: clamp(36px, 4vw, 52px);
+      line-height: .98;
+      letter-spacing: -.045em;
+      font-weight: 400;
+      max-width: 900px;
+    }
+
+    .faq {
+      display: grid;
+      gap: 10px;
+      max-width: 900px;
+    }
+    details {
+      border-radius: 22px;
+      padding: 18px 22px;
+    }
+    summary {
+      cursor: pointer;
+      list-style: none;
+      font-family: var(--sans);
+      font-size: 18px;
+      letter-spacing: -.03em;
+    }
+    summary::-webkit-details-marker { display: none; }
+    details p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .cta {
+      padding-bottom: 72px;
+    }
+    .demo-card {
+      border-radius: 30px;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 18px;
+    }
+
+    footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .foot img { width: 112px; height: auto; }
+
+    @media (max-width: 940px) {
+      .hero-grid,
+      .section-head,
+      .note-grid,
+      .demo-card {
+        grid-template-columns: 1fr;
+      }
+      .cards { grid-template-columns: 1fr; }
+      .checklist li { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .container { width: min(100% - 28px, 1100px); }
+      .hero { padding-top: 48px; }
+      h1 { font-size: clamp(42px, 13vw, 62px); }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="Volver al inicio de Orvo">
+        <img src="/assets/orvo-logo-mark.png" alt="" />
+        <span class="brand-name">orvo</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación de apoyo">
+        <a href="/">Inicio</a>
+        <a href="/software-gestion-pymes">Software gestión</a>
+        <a href="/agentes-ia-pymes">IA PyMEs</a>
+        <a href="/#gestion">Operación PyME</a>
+        <a href="/#agendar">Agendar demo</a>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Guía práctica para PyMEs argentinas</div>
+          <h1><span>Gestión de PyMEs</span>: ordenar la operación antes del caos.</h1>
+          <p class="lead">Gestionar una PyME no es solo tener datos cargados. Es poder leer juntos ventas, stock, atención, facturación y caja para decidir qué revisar hoy, con evidencia y sin depender de mensajes sueltos.</p>
+          <div class="hero-actions">
+            <a class="btn btn-dark" href="https://calendly.com/juanagrippino/website-services" target="_blank" rel="noopener noreferrer">Agendar demo</a>
+            <a class="btn btn-light" href="/">Ver la plataforma</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Frentes que suelen romper la gestión diaria de una PyME">
+          <h2>Qué suele desordenar la gestión diaria.</h2>
+          <p>Cuando estas señales viven separadas, la PyME pierde velocidad de decisión incluso antes de perder ventas o caja.</p>
+          <ul class="signal-list">
+            <li><b>01</b><span>Pedidos, ventas y desempeño por canal, incluyendo ecommerce o Tiendanube.</span></li>
+            <li><b>02</b><span>Stock crítico, reposiciones urgentes y productos que frenan la operación.</span></li>
+            <li><b>03</b><span>Atención pendiente, reclamos y escalados que siguen atados a WhatsApp.</span></li>
+            <li><b>04</b><span>Facturación, cobranzas y caja con estados poco visibles o desactualizados.</span></li>
+          </ul>
+        </aside>
+      </div>
+      <div class="resource-strip">
+        <p>Si además querés bajar esto a herramientas concretas, leé <a href="/software-gestion-pymes">qué mirar en un software de gestión para PyMEs</a>, <a href="/ia-para-pymes">dónde conviene empezar con IA en una PyME</a> y <a href="/agentes-ia-pymes">cómo usar agentes de IA con evidencia</a>.</p>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Qué significa gestionar mejor</div>
+            <h2>La gestión de PyMEs mejora cuando el caso aparece completo.</h2>
+          </div>
+          <p>Una buena gestión no es solo sumar reportes. Es poder ver un problema operativo con su contexto, su responsable y su próximo paso antes de que termine el día.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="num">A</div><h3>Señales conectadas.</h3><p>Ventas, stock, atención, facturación y caja tienen que leerse como una misma operación, no como áreas aisladas.</p></article>
+          <article class="card"><div class="num">B</div><h3>Casos priorizados.</h3><p>La gestión diaria necesita saber qué revisar primero, no abrir cinco sistemas para encontrar un desvío por intuición.</p></article>
+          <article class="card"><div class="num">C</div><h3>Responsables visibles.</h3><p>Cada caso operativo tiene que mostrar quién lo toma, cuál es el estado y qué quedó pendiente.</p></article>
+          <article class="card"><div class="num">D</div><h3>Decisiones trazables.</h3><p>Cuando la evidencia y la acción quedan guardadas en una consola, la PyME aprende más rápido y repite menos errores.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Orden mínimo</div>
+            <h2>Cuatro preguntas para ordenar la gestión sin agrandar el sistema.</h2>
+          </div>
+          <p>Antes de pensar en una migración grande, conviene entender dónde se corta hoy la operación y qué señales ya existen para mejorarla.</p>
+        </div>
+        <ul class="checklist">
+          <li><strong>¿Qué señales revisa alguien todos los días?</strong><span>Si ventas, stock, reclamos o cobranzas requieren chequeos manuales diarios, ahí suele haber un primer caso operativo para ordenar.</span></li>
+          <li><strong>¿Dónde se rompen los handoffs?</strong><span>La gestión de PyMEs suele trabarse cuando ventas promete, stock no confirma, atención no ve el contexto y administración se entera tarde.</span></li>
+          <li><strong>¿Qué canal alerta y qué sistema guarda estado?</strong><span>WhatsApp puede avisar rápido, pero la operación necesita una app donde quede el historial, el responsable y el próximo paso.</span></li>
+          <li><strong>¿Qué fuente falta o llega tarde?</strong><span>Una gestión sana no inventa métricas. Si una fuente está incompleta, conviene marcarla como pendiente y trabajar con la evidencia disponible.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="quote">
+          <p>La gestión de una PyME mejora cuando cada mañana la operación puede decir qué pasó, qué falta y qué merece atención ahora.</p>
+          <span>Ese cambio suele venir de conectar señales y ordenar casos, no de sumar otra capa de reportes que nadie mira a tiempo.</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Agentes de IA para PyMEs</div>
+            <h2>Dónde aportan los agentes dentro de la gestión.</h2>
+          </div>
+          <p>Los agentes de IA tienen valor cuando trabajan sobre señales reales del negocio y ayudan a detectar antes un caso operativo. No reemplazan a quien decide.</p>
+        </div>
+        <div class="note-grid">
+          <article class="note"><h3>Monitoreo continuo.</h3><p>Un agente puede revisar ventas, stock, atención, facturación o caja de forma constante y marcar desvíos sin esperar al cierre manual.</p></article>
+          <article class="note"><h3>Briefs con evidencia.</h3><p>En vez de otra alarma vacía, el agente puede resumir fuente, contexto, prioridad y próximo paso sugerido para cada caso.</p></article>
+          <article class="note"><h3>Control en la app.</h3><p>Las alertas pueden llegar por WhatsApp, pero la gestión sigue necesitando una consola donde queden estado, trazabilidad y decisión humana.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Preguntas frecuentes</div>
+            <h2>Antes de ordenar la gestión de tu PyME</h2>
+          </div>
+          <p>Estas preguntas aparecen seguido cuando la operación ya no entra bien en planillas, chats y sistemas que no se hablan entre sí.</p>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>¿Gestión de PyMEs es lo mismo que comprar un ERP?</summary>
+            <p>No siempre. A veces conviene empezar conectando las señales más críticas y armando una capa operativa con casos y evidencia antes de cambiar todo el stack.</p>
+          </details>
+          <details>
+            <summary>¿Se puede ordenar la gestión sin cambiar todo el sistema?</summary>
+            <p>Sí. Muchas PyMEs pueden mejorar primero la lectura diaria de la operación con una consola y fuentes existentes, y recién después decidir qué módulo vale la pena migrar.</p>
+          </details>
+          <details>
+            <summary>¿Qué rol cumple WhatsApp en la gestión?</summary>
+            <p>WhatsApp sirve bien como alerta o brief, pero no debería guardar la operación. El control real necesita una app con estados, responsables y evidencia.</p>
+          </details>
+          <details>
+            <summary>¿Dónde entran los agentes de IA para PyMEs?</summary>
+            <p>En tareas de monitoreo, priorización y preparación de contexto. Ayudan a detectar antes ventas caídas, stock crítico, reclamos pendientes o desvíos de caja sin inventar métricas.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Demo</div>
+            <h2>Si querés ordenar la gestión, empezá por un piloto con señales reales.</h2>
+          </div>
+          <p>En la llamada revisamos qué parte de la operación conviene mapear primero, qué fuentes ya existen y dónde Orvo puede dar una lectura diaria más clara.</p>
+        </div>
+        <div class="demo-card">
+          <div>
+            <h3>Veamos dónde se está cortando tu operación.</h3>
+            <p>Podemos mapear ventas, stock, atención, facturación y caja para dejar una primera capa de gestión con evidencia y WhatsApp solo como canal de alertas y briefs.</p>
+          </div>
+          <a class="btn btn-dark" href="https://calendly.com/juanagrippino/website-services" target="_blank" rel="noopener noreferrer">Agendar demo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <img src="/assets/orvo-logo-wordmark.png" alt="Orvo" />
+      <span>Centro operativo con agentes para PyMEs argentinas.</span>
+      <span><a href="/">Volver al inicio</a></span>
+    </div>
+  </footer>
+</body>
+</html>
