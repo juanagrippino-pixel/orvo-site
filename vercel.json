@@ -2,10 +2,6 @@
   "outputDirectory": ".",
   "routes": [
     {
-      "src": "/demo-artemea.html",
-      "dest": "/demo-artemea.html"
-    },
-    {
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
     },
