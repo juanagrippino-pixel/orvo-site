@@ -38,6 +38,14 @@
       "dest": "/agentes-ia-pymes.html"
     },
     {
+      "src": "/ia-para-pymes",
+      "dest": "/ia-para-pymes.html"
+    },
+    {
+      "src": "/ia-para-pymes.html",
+      "dest": "/ia-para-pymes.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
