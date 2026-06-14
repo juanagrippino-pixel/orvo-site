@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automatización operativa para PyMEs: qué conviene automatizar primero | Orvo</title>
+  <meta name="description" content="Guía práctica sobre automatización operativa para PyMEs argentinas: cómo automatizar alertas, handoffs y seguimiento sin perder control sobre ventas, stock, atención, facturación y caja." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://orvo.space/automatizacion-operativa-pymes" />
+
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://orvo.space/automatizacion-operativa-pymes" />
+  <meta property="og:title" content="Automatización operativa para PyMEs: qué conviene automatizar primero" />
+  <meta property="og:description" content="Qué automatizar primero en una PyME argentina: alertas, handoffs y seguimiento con evidencia operativa y control humano." />
+  <meta property="og:image" content="https://orvo.space/assets/icon-512.png" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="Orvo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Automatización operativa para PyMEs: qué conviene automatizar primero" />
+  <meta name="twitter:description" content="Cómo empezar con automatización operativa en una PyME sin humo: casos repetitivos, evidencia y control dentro de la app." />
+  <meta name="twitter:image" content="https://orvo.space/assets/icon-512.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Orvo",
+        "item": "https://orvo.space/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Automatización operativa para PyMEs",
+        "item": "https://orvo.space/automatizacion-operativa-pymes"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://orvo.space/#organization",
+    "name": "Orvo",
+    "url": "https://orvo.space/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://orvo.space/assets/icon-512.png",
+      "width": 512,
+      "height": 512
+    },
+    "areaServed": "AR"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Automatización operativa para PyMEs: qué conviene automatizar primero",
+    "description": "Guía práctica para automatizar alertas, handoffs y seguimiento operativo en PyMEs argentinas sin perder evidencia ni control.",
+    "mainEntityOfPage": "https://orvo.space/automatizacion-operativa-pymes",
+    "inLanguage": "es-AR",
+    "datePublished": "2026-06-14",
+    "dateModified": "2026-06-14",
+    "author": {
+      "@type": "Organization",
+      "name": "Orvo"
+    },
+    "publisher": { "@id": "https://orvo.space/#organization" },
+    "image": "https://orvo.space/assets/icon-512.png"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Automatizar es lo mismo que reemplazar el trabajo manual por completo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. La automatización operativa útil en una PyME empieza por tareas repetitivas con reglas claras: detectar desvíos, preparar contexto y escalar alertas. La decisión final y el control del caso siguen en la operación."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué conviene automatizar primero en una PyME?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Conviene empezar por señales que hoy alguien revisa todos los días: caídas de ventas, stock crítico, reclamos pendientes, cobranzas atrasadas o handoffs entre áreas. Son casos donde ya existe evidencia y la respuesta necesita llegar antes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿WhatsApp puede ser la automatización principal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No debería serlo. WhatsApp sirve para escalar alertas o briefs, pero la automatización operativa necesita una app o consola donde queden la evidencia, el estado, el responsable y la trazabilidad de cada caso."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    @font-face {
+      font-family: 'Tobias';
+      src: url('assets/fonts/Tobias-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('assets/fonts/SuisseIntl-Regular.ttf') format('truetype');
+      font-weight: 400 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Suisse Intl Book';
+      src: url('assets/fonts/SuisseIntl-Book.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Geist Mono HR';
+      src: url('assets/fonts/GeistMono_Variable.p.17jn9btb_52pq.woff2') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; }
+    :root {
+      --bg: #f7f5ef;
+      --paper: #fffdf7;
+      --paper-2: #efede5;
+      --ink: #0b0f0e;
+      --ink-2: #232826;
+      --muted: #5f6862;
+      --line: rgba(11,15,14,.12);
+      --green: #163f2e;
+      --green-soft: #dfeee4;
+      --white: #ffffff;
+      --shadow: 0 28px 80px rgba(20,25,22,.10);
+      --shadow-soft: 0 14px 40px rgba(20,25,22,.07);
+      --sans: 'Suisse Intl', Arial, sans-serif;
+      --body-book: 'Suisse Intl Book', 'Suisse Intl', Arial, sans-serif;
+      --display: 'Tobias', Georgia, serif;
+      --mono: 'Geist Mono HR', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body-book);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(11,15,14,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(11,15,14,.03) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.42), transparent 68%);
+      z-index: -1;
+    }
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; max-width: 100%; }
+    .container { width: min(1100px, calc(100% - 44px)); margin-inline: auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(247,245,239,.86);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-family: var(--sans);
+      font-weight: 760;
+      letter-spacing: -.04em;
+    }
+    .brand img { width: 38px; height: 38px; object-fit: contain; }
+    .brand-name { font-size: 21px; line-height: 1; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: var(--ink-2);
+      font-size: 14px;
+      font-weight: 520;
+    }
+    .nav-links a { opacity: .82; }
+    .nav-links a:hover { opacity: 1; }
+
+    .hero { padding: 84px 0 28px; }
+    .eyebrow {
+      font-family: var(--mono);
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 6px rgba(22,63,46,.10);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .94fr) minmax(300px, .72fr);
+      gap: 36px;
+      align-items: start;
+    }
+    h1 {
+      margin-top: 18px;
+      font-family: var(--display);
+      font-size: clamp(52px, 7vw, 94px);
+      line-height: .96;
+      letter-spacing: -.05em;
+      font-weight: 400;
+      max-width: 820px;
+    }
+    h1 span { color: var(--green); }
+    .lead {
+      margin-top: 24px;
+      max-width: 690px;
+      color: var(--ink-2);
+      font-size: clamp(18px, 1.8vw, 22px);
+      line-height: 1.5;
+      letter-spacing: -.018em;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 650;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-dark {
+      background: var(--ink);
+      color: var(--paper);
+      box-shadow: 0 16px 34px rgba(11,15,14,.16);
+    }
+    .btn-light {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      color: var(--ink);
+    }
+    .hero-card {
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: rgba(255,253,247,.8);
+      box-shadow: var(--shadow-soft);
+      padding: 24px;
+    }
+    .hero-card h2 {
+      font-family: var(--display);
+      font-size: 34px;
+      line-height: 1.02;
+      letter-spacing: -.04em;
+      font-weight: 400;
+    }
+    .hero-card p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .resource-strip {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255,253,247,.76);
+      box-shadow: var(--shadow-soft);
+    }
+    .resource-strip p {
+      color: var(--ink-2);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    .resource-strip a {
+      color: var(--green);
+      font-weight: 650;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.16em;
+    }
+    .signal-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .signal-list li {
+      list-style: none;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--white);
+    }
+    .signal-list li b {
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-family: var(--mono);
+      font-size: 11px;
+    }
+
+    section { padding: 72px 0; }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(280px, .48fr);
+      gap: 42px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+    .section-head h2 {
+      margin-top: 16px;
+      font-family: var(--display);
+      font-size: clamp(36px, 4.8vw, 72px);
+      line-height: .98;
+      letter-spacing: -.045em;
+      font-weight: 400;
+    }
+    .section-head p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      overflow: hidden;
+      background: var(--line);
+      box-shadow: var(--shadow-soft);
+    }
+    .card {
+      background: var(--paper);
+      padding: 26px;
+      min-height: 220px;
+    }
+    .card .num {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .card h3 {
+      margin-top: 44px;
+      font-size: 28px;
+      line-height: 1.08;
+      letter-spacing: -.04em;
+      font-weight: 500;
+    }
+    .card p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .note-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .note {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255,253,247,.82);
+      box-shadow: var(--shadow-soft);
+    }
+    .note h3 {
+      font-size: 22px;
+      line-height: 1.08;
+      letter-spacing: -.03em;
+    }
+    .note p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .checklist {
+      display: grid;
+      gap: 12px;
+      max-width: 920px;
+    }
+    .checklist li {
+      list-style: none;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--paper);
+      box-shadow: var(--shadow-soft);
+    }
+    .checklist li strong {
+      display: block;
+      font-size: 16px;
+      letter-spacing: -.015em;
+    }
+    .checklist li span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .faq {
+      display: grid;
+      gap: 10px;
+      max-width: 900px;
+      margin-inline: auto;
+    }
+    details {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 19px 20px;
+      font-weight: 650;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      color: var(--green);
+      font-size: 22px;
+      line-height: 1;
+    }
+    details[open] summary::after { content: "–"; }
+    details p {
+      padding: 0 20px 19px;
+      color: var(--muted);
+    }
+    .cta {
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: 42px 42px 0 0;
+      padding: 86px 0;
+    }
+    .cta .section-head p { color: rgba(255,253,247,.66); }
+    .demo-card {
+      background: var(--paper);
+      color: var(--ink);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 30px 90px rgba(0,0,0,.28);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 24px;
+    }
+    .demo-card h3 {
+      font-family: var(--display);
+      font-size: clamp(34px, 3.7vw, 54px);
+      line-height: 1;
+      letter-spacing: -.045em;
+      font-weight: 400;
+    }
+    .demo-card p {
+      margin-top: 13px;
+      color: var(--muted);
+      max-width: 650px;
+    }
+    footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .foot img { width: 112px; height: auto; }
+
+    @media (max-width: 940px) {
+      .hero-grid,
+      .section-head,
+      .note-grid,
+      .demo-card {
+        grid-template-columns: 1fr;
+      }
+      .cards { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .container { width: min(100% - 28px, 1100px); }
+      .hero { padding-top: 48px; }
+      h1 { font-size: clamp(42px, 13vw, 62px); }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="Volver al inicio de Orvo">
+        <img src="/assets/orvo-logo-mark.png" alt="" />
+        <span class="brand-name">orvo</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación de apoyo">
+        <a href="/">Inicio</a>
+        <a href="/software-gestion-pymes">Software gestión</a>
+        <a href="/agentes-ia-pymes">IA PyMEs</a>
+        <a href="/#agendar">Agendar demo</a>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Guía práctica para PyMEs argentinas</div>
+          <h1>Automatización operativa para <span>PyMEs</span>: empezar por casos, no por promesas.</h1>
+          <p class="lead">Automatizar no es apilar bots. En una PyME conviene empezar por alertas, handoffs y seguimientos que hoy dependen de revisar varias herramientas a mano. La meta es detectar antes, escalar mejor y dejar evidencia en una consola operativa.</p>
+          <div class="hero-actions">
+            <a class="btn btn-dark" href="https://calendly.com/juanagrippino/website-services" target="_blank" rel="noopener noreferrer">Agendar demo</a>
+            <a class="btn btn-light" href="/">Ver la plataforma</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Casos iniciales para automatización operativa">
+          <h2>Qué conviene automatizar primero en la operación.</h2>
+          <p>Estos casos suelen tener reglas claras, evidencia disponible y un costo visible cuando llegan tarde.</p>
+          <ul class="signal-list">
+            <li><b>01</b><span>Alertas de ventas o pedidos que caen por canal, ecommerce o Tiendanube.</span></li>
+            <li><b>02</b><span>Stock crítico y reposición antes de un quiebre o una campaña.</span></li>
+            <li><b>03</b><span>Reclamos pendientes y escalados que hoy se pierden entre chats.</span></li>
+            <li><b>04</b><span>Facturación, cobranzas y caja con seguimiento de readiness.</span></li>
+          </ul>
+        </aside>
+      </div>
+      <div class="resource-strip">
+        <p>Si además querés ordenar la base antes de automatizar, seguí con <a href="/software-gestion-pymes">la guía sobre software de gestión para PyMEs</a>, <a href="/ia-para-pymes">dónde conviene empezar con IA en una PyME</a> y <a href="/agentes-ia-pymes">cómo usar agentes de IA con evidencia y control operativo</a>.</p>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Qué debería resolver</div>
+            <h2>Automatizar bien significa sacar fricción del trabajo real.</h2>
+          </div>
+          <p>La automatización operativa suma cuando detecta antes un desvío, prepara contexto y deja claro quién tiene que actuar. Si solo agrega mensajes o métricas, no baja carga de verdad.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="num">A</div><h3>Detectar desvíos temprano.</h3><p>La automatización puede revisar ventas, stock, reclamos o cobranzas de forma constante y marcar cambios relevantes antes del cierre manual.</p></article>
+          <article class="card"><div class="num">B</div><h3>Preparar contexto.</h3><p>Una alerta útil llega con fuente, prioridad, responsable y próximo paso sugerido, no como un mensaje suelto que obliga a reconstruir el caso.</p></article>
+          <article class="card"><div class="num">C</div><h3>Separar alerta y sistema de trabajo.</h3><p>WhatsApp puede avisar rápido, pero la operación necesita una app donde queden el estado, la evidencia y la trazabilidad.</p></article>
+          <article class="card"><div class="num">D</div><h3>Escalar sin perder control.</h3><p>Cuando una regla dispara un caso, la automatización tiene que mostrar a quién se le asigna, qué falta y cuándo se resolvió.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Dónde empezar</div>
+            <h2>Cuatro preguntas para elegir tu primer flujo.</h2>
+          </div>
+          <p>En una PyME rara vez conviene automatizar todo al mismo tiempo. Suele rendir más empezar por un problema repetitivo donde la evidencia ya existe y alguien necesita actuar rápido.</p>
+        </div>
+        <ul class="checklist">
+          <li><strong>¿Qué revisa alguien todos los días?</strong><span>Si ventas, stock, reclamos o cobranzas requieren chequeos manuales diarios, ahí suele haber un primer caso de automatización útil.</span></li>
+          <li><strong>¿Dónde se rompe el handoff?</strong><span>La automatización aporta mucho cuando ventas promete, stock no confirma, atención no ve el contexto y administración se entera tarde.</span></li>
+          <li><strong>¿La regla ya existe aunque hoy sea manual?</strong><span>Si el equipo ya sabe cuándo algo merece atención, esa regla puede pasar a monitoreo continuo con evidencia y prioridad.</span></li>
+          <li><strong>¿Dónde vive la evidencia del caso?</strong><span>Sin fuente y trazabilidad no hay automatización confiable. El flujo tiene que mostrar dato, fecha y responsable dentro de la app.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Errores comunes</div>
+            <h2>Lo que no conviene automatizar primero.</h2>
+          </div>
+          <p>Las primeras automatizaciones fallan cuando intentan reemplazar criterio humano, esconder datos faltantes o usar el chat como sistema principal.</p>
+        </div>
+        <div class="note-grid">
+          <article class="note"><h3>Automatizar un proceso roto.</h3><p>Si nadie sabe qué regla aplicar o quién decide, el bot solo multiplica confusión más rápido.</p></article>
+          <article class="note"><h3>Tapar huecos con supuestos.</h3><p>Cuando falta una fuente, la operación necesita verla marcada como pendiente. Inventar métricas destruye confianza.</p></article>
+          <article class="note"><h3>Usar WhatsApp como base de estado.</h3><p>El chat escala bien un brief, pero no reemplaza la consola donde quedan responsables, decisiones y seguimiento.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Preguntas frecuentes</div>
+            <h2>Antes de automatizar una operación PyME</h2>
+          </div>
+          <p>Estas dudas aparecen cuando una PyME quiere ganar velocidad sin perder control operativo, evidencia ni criterio humano.</p>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>¿Automatizar es lo mismo que sacar personas del proceso?</summary>
+            <p>No. La automatización operativa útil reduce chequeos manuales, arma contexto y escala alertas. La decisión sobre cada caso sigue necesitando a un operador responsable.</p>
+          </details>
+          <details>
+            <summary>¿Qué flujo conviene automatizar primero?</summary>
+            <p>El que hoy alguien revisa todos los días y genera costos cuando llega tarde: ventas caídas, stock crítico, reclamos pendientes, cobranzas o facturación trabada.</p>
+          </details>
+          <details>
+            <summary>¿Sirve si ya operás con ecommerce, Tiendanube o WhatsApp?</summary>
+            <p>Sí. La idea no es tirar esos canales, sino leerlos como fuentes reales de la operación y dejar el control del caso en una consola común.</p>
+          </details>
+          <details>
+            <summary>¿Qué rol cumplen los agentes de IA en esta automatización?</summary>
+            <p>Pueden monitorear señales, priorizar casos y preparar briefs con evidencia. El valor aparece cuando trabajan sobre datos visibles y reglas claras, no como un bot opaco.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Demo</div>
+            <h2>Si querés automatizar mejor, empezá por un piloto con casos reales.</h2>
+          </div>
+          <p>En la llamada revisamos qué flujo conviene automatizar primero, qué fuentes ya existen y cómo dejar alertas, estado y evidencia dentro de la operación.</p>
+        </div>
+        <div class="demo-card">
+          <div>
+            <h3>Veamos dónde hoy tu equipo pierde más tiempo.</h3>
+            <p>Podemos mapear ventas, stock, atención, facturación y caja para elegir una primera automatización útil, con WhatsApp solo como canal de alertas y briefs.</p>
+          </div>
+          <a class="btn btn-dark" href="https://calendly.com/juanagrippino/website-services" target="_blank" rel="noopener noreferrer">Agendar demo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <img src="/assets/orvo-logo-wordmark.png" alt="Orvo" />
+      <span>Centro operativo con agentes para PyMEs argentinas.</span>
+      <span><a href="/">Volver al inicio</a></span>
+    </div>
+  </footer>
+</body>
+</html>

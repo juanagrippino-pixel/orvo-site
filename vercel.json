@@ -38,6 +38,14 @@
       "dest": "/software-gestion-pymes.html"
     },
     {
+      "src": "/automatizacion-operativa-pymes",
+      "dest": "/automatizacion-operativa-pymes.html"
+    },
+    {
+      "src": "/automatizacion-operativa-pymes.html",
+      "dest": "/automatizacion-operativa-pymes.html"
+    },
+    {
       "src": "/agentes-ia-pymes",
       "dest": "/agentes-ia-pymes.html"
     },
