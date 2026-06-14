@@ -22,6 +22,14 @@
       "dest": "/site.webmanifest"
     },
     {
+      "src": "/centro-operativo-pymes",
+      "dest": "/centro-operativo-pymes.html"
+    },
+    {
+      "src": "/centro-operativo-pymes.html",
+      "dest": "/centro-operativo-pymes.html"
+    },
+    {
       "src": "/gestion-de-pymes",
       "dest": "/gestion-de-pymes.html"
     },

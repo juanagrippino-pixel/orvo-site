@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Centro operativo para PyMEs: una consola para decidir con evidencia | Orvo</title>
+  <meta name="description" content="Qué es un centro operativo para PyMEs argentinas: una consola operativa para leer ventas, stock, atención, facturación y caja con evidencia y agentes de IA." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://orvo.space/centro-operativo-pymes" />
+
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://orvo.space/centro-operativo-pymes" />
+  <meta property="og:title" content="Centro operativo para PyMEs: una consola para decidir con evidencia" />
+  <meta property="og:description" content="Cómo funciona una consola operativa para PyMEs argentinas cuando ventas, stock, atención, facturación y caja viven en sistemas separados." />
+  <meta property="og:image" content="https://orvo.space/assets/icon-512.png" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="Orvo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Centro operativo para PyMEs: una consola para decidir con evidencia" />
+  <meta name="twitter:description" content="Una guía para PyMEs argentinas que necesitan una consola operativa más clara sobre ventas, stock, atención, facturación y caja." />
+  <meta name="twitter:image" content="https://orvo.space/assets/icon-512.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Orvo",
+        "item": "https://orvo.space/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Centro operativo para PyMEs",
+        "item": "https://orvo.space/centro-operativo-pymes"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://orvo.space/#organization",
+    "name": "Orvo",
+    "url": "https://orvo.space/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://orvo.space/assets/icon-512.png",
+      "width": 512,
+      "height": 512
+    },
+    "areaServed": "AR"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Centro operativo para PyMEs: una consola para decidir con evidencia",
+    "description": "Guía práctica para entender qué resuelve un centro operativo para PyMEs argentinas, qué tiene que mostrar una consola y dónde ayudan los agentes de IA.",
+    "mainEntityOfPage": "https://orvo.space/centro-operativo-pymes",
+    "inLanguage": "es-AR",
+    "datePublished": "2026-06-14",
+    "dateModified": "2026-06-14",
+    "author": {
+      "@type": "Organization",
+      "name": "Orvo"
+    },
+    "publisher": { "@id": "https://orvo.space/#organization" },
+    "image": "https://orvo.space/assets/icon-512.png"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué es un centro operativo para PyMEs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es una consola operativa que junta ventas, stock, atención, facturación y caja para mostrar casos priorizados, responsables, evidencia y próximos pasos en un solo lugar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es lo mismo que un ERP o un software de gestión tradicional?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No siempre. Un centro operativo puede convivir con sistemas existentes y enfocarse primero en leer la operación diaria con evidencia. A veces luego deriva en cambios más grandes; otras veces ordena la gestión sin exigir una migración completa al principio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué no alcanza con WhatsApp y planillas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Porque WhatsApp sirve bien para alertar rápido, pero no para guardar estado, prioridad y trazabilidad. La operación necesita una app o consola donde quede qué pasó, quién toma el caso y con qué evidencia se decidió."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Dónde entran los agentes de IA dentro de la consola?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los agentes de IA sirven para monitorear señales operativas, detectar desvíos y preparar contexto con evidencia. No reemplazan al operador: ayudan a decidir antes sobre ventas, stock, atención, facturación y caja dentro de la consola operativa."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    @font-face {
+      font-family: 'Tobias';
+      src: url('assets/fonts/Tobias-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('assets/fonts/SuisseIntl-Regular.ttf') format('truetype');
+      font-weight: 400 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Suisse Intl Book';
+      src: url('assets/fonts/SuisseIntl-Book.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Geist Mono HR';
+      src: url('assets/fonts/GeistMono_Variable.p.17jn9btb_52pq.woff2') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; }
+    :root {
+      --bg: #f7f5ef;
+      --paper: #fffdf7;
+      --paper-2: #efede5;
+      --ink: #0b0f0e;
+      --ink-2: #232826;
+      --muted: #5f6862;
+      --line: rgba(11,15,14,.12);
+      --line-strong: rgba(11,15,14,.22);
+      --green: #163f2e;
+      --green-soft: #dfeee4;
+      --white: #ffffff;
+      --shadow: 0 28px 80px rgba(20,25,22,.10);
+      --shadow-soft: 0 14px 40px rgba(20,25,22,.07);
+      --sans: 'Suisse Intl', Arial, sans-serif;
+      --body-book: 'Suisse Intl Book', 'Suisse Intl', Arial, sans-serif;
+      --display: 'Tobias', Georgia, serif;
+      --mono: 'Geist Mono HR', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body-book);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(11,15,14,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(11,15,14,.03) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.42), transparent 68%);
+      z-index: -1;
+    }
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; max-width: 100%; }
+    .container { width: min(1100px, calc(100% - 44px)); margin-inline: auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(247,245,239,.86);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-family: var(--sans);
+      font-weight: 760;
+      letter-spacing: -.04em;
+    }
+    .brand img { width: 38px; height: 38px; object-fit: contain; }
+    .brand-name { font-size: 21px; line-height: 1; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: var(--ink-2);
+      font-size: 14px;
+      font-weight: 520;
+    }
+    .nav-links a { opacity: .82; }
+    .nav-links a:hover { opacity: 1; }
+
+    .hero {
+      padding: 66px 0 40px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 380px);
+      gap: 34px;
+      align-items: center;
+    }
+    .eyebrow {
+      font-family: var(--mono);
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 6px rgba(22,63,46,.10);
+    }
+    h1 {
+      margin-top: 18px;
+      font-family: var(--display);
+      font-size: clamp(52px, 8vw, 88px);
+      line-height: .96;
+      letter-spacing: -.05em;
+      font-weight: 400;
+      max-width: 760px;
+    }
+    h1 span { color: var(--green); }
+    .lead {
+      margin-top: 22px;
+      max-width: 640px;
+      color: var(--ink-2);
+      font-size: clamp(18px, 2vw, 22px);
+    }
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 650;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn-dark {
+      background: var(--ink);
+      color: var(--paper);
+      box-shadow: 0 16px 34px rgba(11,15,14,.16);
+    }
+    .btn-light {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      color: var(--ink);
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 20px 44px rgba(11,15,14,.15); }
+
+    .hero-card,
+    .card,
+    .note,
+    .demo-card,
+    .quote,
+    details {
+      background: rgba(255,253,247,.86);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    .hero-card {
+      padding: 26px;
+      border-radius: 30px;
+    }
+    .hero-card h2 {
+      font-family: var(--sans);
+      font-size: 28px;
+      line-height: 1;
+      letter-spacing: -.05em;
+    }
+    .hero-card p {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .signal-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+      padding: 0;
+    }
+    .signal-list li {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+    .signal-list li:first-child { border-top: 0; padding-top: 0; }
+    .signal-list b {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--green);
+      letter-spacing: .05em;
+    }
+
+    .resource-strip {
+      margin-top: 34px;
+      padding: 18px 22px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      color: var(--ink-2);
+      background: rgba(255,253,247,.38);
+    }
+    .resource-strip a {
+      text-decoration: underline;
+      text-decoration-thickness: .08em;
+      text-underline-offset: .16em;
+    }
+
+    section {
+      padding: 44px 0;
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(280px, .8fr);
+      gap: 30px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+    .section-head h2 {
+      margin-top: 14px;
+      font-family: var(--display);
+      font-size: clamp(38px, 5vw, 58px);
+      line-height: .98;
+      letter-spacing: -.045em;
+      font-weight: 400;
+    }
+    .section-head p {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 560px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .card {
+      border-radius: 28px;
+      padding: 26px;
+      min-height: 220px;
+    }
+    .num {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--green-soft);
+      color: var(--green);
+      font-family: var(--mono);
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+    .card h3,
+    .note h3,
+    .demo-card h3 {
+      font-family: var(--sans);
+      font-size: 28px;
+      line-height: 1;
+      letter-spacing: -.05em;
+      margin-bottom: 14px;
+    }
+    .card p,
+    .note p,
+    .demo-card p,
+    .quote span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .checklist {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      padding: 0;
+    }
+    .checklist li {
+      display: grid;
+      grid-template-columns: minmax(220px, 280px) 1fr;
+      gap: 18px;
+      padding: 18px 22px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,253,247,.78);
+    }
+    .checklist strong {
+      font-family: var(--sans);
+      letter-spacing: -.02em;
+      font-size: 17px;
+      line-height: 1.15;
+    }
+    .checklist span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .note-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .note {
+      border-radius: 26px;
+      padding: 24px;
+      min-height: 210px;
+    }
+
+    .quote {
+      border-radius: 32px;
+      padding: 34px;
+      display: grid;
+      gap: 14px;
+    }
+    .quote p {
+      font-family: var(--display);
+      font-size: clamp(36px, 4vw, 52px);
+      line-height: .98;
+      letter-spacing: -.045em;
+      font-weight: 400;
+      max-width: 900px;
+    }
+
+    .faq {
+      display: grid;
+      gap: 10px;
+      max-width: 900px;
+    }
+    details {
+      border-radius: 22px;
+      padding: 18px 22px;
+    }
+    summary {
+      cursor: pointer;
+      list-style: none;
+      font-family: var(--sans);
+      font-size: 18px;
+      letter-spacing: -.03em;
+    }
+    summary::-webkit-details-marker { display: none; }
+    details p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .cta {
+      padding-bottom: 72px;
+    }
+    .demo-card {
+      border-radius: 30px;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 18px;
+    }
+
+    footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .foot img { width: 112px; height: auto; }
+
+    @media (max-width: 940px) {
+      .hero-grid,
+      .section-head,
+      .note-grid,
+      .demo-card {
+        grid-template-columns: 1fr;
+      }
+      .cards { grid-template-columns: 1fr; }
+      .checklist li { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .container { width: min(100% - 28px, 1100px); }
+      .hero { padding-top: 48px; }
+      h1 { font-size: clamp(42px, 13vw, 62px); }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="Volver al inicio de Orvo">
+        <img src="/assets/orvo-logo-mark.png" alt="" />
+        <span class="brand-name">orvo</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación de apoyo">
+        <a href="/">Inicio</a>
+        <a href="/gestion-de-pymes">Gestión PyMEs</a>
+        <a href="/software-gestion-pymes">Software gestión</a>
+        <a href="/agentes-ia-pymes">IA PyMEs</a>
+        <a href="/#agendar">Agendar demo</a>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Guía práctica para PyMEs argentinas</div>
+          <h1><span>Centro operativo para PyMEs</span>: una consola para decidir con evidencia.</h1>
+          <p class="lead">Un centro operativo no agrega ruido. Junta ventas, stock, atención, facturación y caja en una sola consola para que la PyME vea qué caso merece atención hoy. WhatsApp puede alertar; la app guarda el estado, la evidencia y la decisión.</p>
+          <div class="hero-actions">
+            <a class="btn btn-dark" href="https://calendly.com/juanagrippino/website-services" target="_blank" rel="noopener noreferrer">Agendar demo</a>
+            <a class="btn btn-light" href="/">Ver la plataforma</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Señales que un centro operativo para PyMEs debería mostrar">
+          <h2>Qué tendría que caer en la consola.</h2>
+          <p>Cuando estas señales se leen juntas, la operación deja de depender de memoria, chats sueltos y chequeos manuales.</p>
+          <ul class="signal-list">
+            <li><b>01</b><span>Pedidos, ventas y desvíos por canal, incluyendo ecommerce o Tiendanube.</span></li>
+            <li><b>02</b><span>Stock crítico, productos frenados y reposiciones que impactan caja o promesa comercial.</span></li>
+            <li><b>03</b><span>Atención pendiente, reclamos y escalados que necesitan contexto antes de responder.</span></li>
+            <li><b>04</b><span>Facturación, cobranzas y caja con alertas claras sobre atrasos, faltantes o inconsistencias.</span></li>
+          </ul>
+        </aside>
+      </div>
+      <div class="resource-strip">
+        <p>Si además querés bajar esto a decisiones concretas, leé <a href="/gestion-de-pymes">cómo ordenar la gestión de una PyME</a>, <a href="/software-gestion-pymes">qué mirar primero en un software de gestión</a>, <a href="/automatizacion-operativa-pymes">qué conviene automatizar primero en la operación</a> y <a href="/agentes-ia-pymes">cómo usar agentes de IA con evidencia</a>.</p>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Definición útil</div>
+            <h2>No es otra pantalla: es el lugar donde la operación se vuelve legible.</h2>
+          </div>
+          <p>Para una PyME, un centro operativo sirve cuando transforma datos dispersos en casos accionables con responsable, prioridad y próximo paso. Si solo suma dashboards, no resuelve el problema real.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="num">A</div><h3>Señales conectadas.</h3><p>Ventas, stock, atención, facturación y caja tienen que leerse como una misma operación, no como áreas aisladas.</p></article>
+          <article class="card"><div class="num">B</div><h3>Casos priorizados.</h3><p>La consola tiene que mostrar qué revisar primero, no obligar a abrir cinco sistemas para encontrar un desvío.</p></article>
+          <article class="card"><div class="num">C</div><h3>Responsable visible.</h3><p>Cada caso necesita dueño, estado y vencimiento. Sin eso, la PyME vuelve a depender de seguimiento manual.</p></article>
+          <article class="card"><div class="num">D</div><h3>Evidencia y trazabilidad.</h3><p>La decisión tiene que quedar respaldada por fuente, contexto y acción tomada para aprender y repetir menos errores.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Qué tiene que mostrar</div>
+            <h2>Una consola operativa buena responde cuatro preguntas antes del mediodía.</h2>
+          </div>
+          <p>Antes de pensar en automatizar más o migrar todo el stack, conviene ver si hoy la operación ya puede leer sus desvíos con claridad.</p>
+        </div>
+        <ul class="checklist">
+          <li><strong>¿Qué se desvió hoy?</strong><span>Una caída de ventas, un quiebre de stock, un reclamo atrasado o una cobranza frenada tienen que aparecer como caso, no escondidos en reportes.</span></li>
+          <li><strong>¿Qué canal o módulo está afectado?</strong><span>La consola operativa tiene que unir ecommerce, atención, administración y caja para que el impacto se entienda rápido.</span></li>
+          <li><strong>¿Quién toma el caso?</strong><span>Sin responsable visible, el centro operativo termina siendo solo otro tablero. La gestión mejora cuando el caso tiene dueño y estado.</span></li>
+          <li><strong>¿Qué evidencia respalda la prioridad?</strong><span>Una PyME no necesita alertas vagas. Necesita fuente, contexto y próximo paso sugerido para decidir sin inventar métricas.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="quote">
+          <p>Un centro operativo para PyMEs vale cuando cada mañana la operación puede decir qué pasó, qué falta y qué merece atención ahora.</p>
+          <span>Ese cambio suele venir de conectar señales y ordenar casos en una consola app-first, no de seguir empujando la operación por chats sueltos.</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">ERP, reportes y WhatsApp</div>
+            <h2>Qué resuelve una consola operativa que otros formatos no resuelven solos.</h2>
+          </div>
+          <p>Un ERP puede registrar. Un tablero puede resumir. WhatsApp puede alertar. El centro operativo sirve para decidir sobre casos abiertos con contexto completo.</p>
+        </div>
+        <div class="note-grid">
+          <article class="note"><h3>Más que registro.</h3><p>El software de gestión tradicional suele guardar estados y movimientos. La consola operativa agrega lectura diaria, prioridad y seguimiento sobre lo que ya está pasando.</p></article>
+          <article class="note"><h3>Más que un dashboard.</h3><p>Un tablero puede mostrar números, pero no siempre explica qué hacer. Un centro operativo traduce señales en casos con dueño y siguiente paso.</p></article>
+          <article class="note"><h3>WhatsApp solo como canal.</h3><p>Las alertas pueden llegar por WhatsApp, pero el control real necesita una app donde queden la evidencia, la trazabilidad y la decisión humana.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Agentes de IA para PyMEs</div>
+            <h2>Dónde aportan los agentes dentro de la consola operativa.</h2>
+          </div>
+          <p>Los agentes de IA tienen valor cuando trabajan sobre señales reales del negocio y ayudan a detectar antes un caso operativo. No reemplazan a quien decide.</p>
+        </div>
+        <div class="note-grid">
+          <article class="note"><h3>Monitoreo continuo.</h3><p>Un agente puede revisar ventas, stock, atención, facturación o caja de forma constante y marcar desvíos sin esperar al cierre manual.</p></article>
+          <article class="note"><h3>Briefs con evidencia.</h3><p>En vez de otra alarma vacía, el agente puede resumir fuente, contexto, prioridad y próximo paso sugerido para cada caso dentro de la consola.</p></article>
+          <article class="note"><h3>Control humano.</h3><p>La recomendación puede llegar por WhatsApp o dentro de la app, pero la trazabilidad queda en la consola para que el equipo pueda revisar, corregir y aprender.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Preguntas frecuentes</div>
+            <h2>Antes de armar un centro operativo para tu PyME</h2>
+          </div>
+          <p>Estas preguntas aparecen seguido cuando la operación ya no entra bien en planillas, chats y sistemas que no se hablan entre sí.</p>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>¿Qué es un centro operativo para PyMEs?</summary>
+            <p>Es una consola operativa que junta señales del negocio para mostrar casos priorizados, responsables y próximos pasos en un solo lugar.</p>
+          </details>
+          <details>
+            <summary>¿Es lo mismo que un ERP o un software de gestión tradicional?</summary>
+            <p>No siempre. Puede convivir con sistemas existentes y enfocarse primero en leer mejor la operación diaria antes de una migración completa.</p>
+          </details>
+          <details>
+            <summary>¿Por qué no alcanza con WhatsApp y planillas?</summary>
+            <p>Porque pueden avisar o registrar partes sueltas, pero no guardan bien prioridad, estado, responsable y evidencia para cada caso operativo.</p>
+          </details>
+          <details>
+            <summary>¿Dónde entran los agentes de IA dentro de la consola?</summary>
+            <p>En tareas de monitoreo, priorización y preparación de contexto. Ayudan a detectar antes ventas caídas, stock crítico, reclamos pendientes o desvíos de caja sin inventar métricas.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Demo</div>
+            <h2>Si querés pasar de chats sueltos a una consola operativa, empecemos por un piloto.</h2>
+          </div>
+          <p>En la llamada revisamos qué señales ya existen, qué casos conviene mostrar primero y dónde Orvo puede funcionar como centro operativo app-first para tu PyME.</p>
+        </div>
+        <div class="demo-card">
+          <div>
+            <h3>Veamos qué debería caer en tu consola.</h3>
+            <p>Podemos mapear ventas, stock, atención, facturación y caja para dejar una primera capa operativa con evidencia y WhatsApp solo como canal de alertas y briefs.</p>
+          </div>
+          <a class="btn btn-dark" href="https://calendly.com/juanagrippino/website-services" target="_blank" rel="noopener noreferrer">Agendar demo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <img src="/assets/orvo-logo-wordmark.png" alt="Orvo" />
+      <span>Centro operativo con agentes para PyMEs argentinas.</span>
+      <span><a href="/">Volver al inicio</a></span>
+    </div>
+  </footer>
+</body>
+</html>
