@@ -51,6 +51,23 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://orvo.space/#organization",
+    "name": "Orvo",
+    "url": "https://orvo.space/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://orvo.space/assets/icon-512.png",
+      "width": 512,
+      "height": 512
+    },
+    "areaServed": "AR"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Software de gestión para PyMEs: qué ordenar primero",
     "description": "Guía breve para evaluar software de gestión para PyMEs argentinas: procesos, señales y uso de agentes de IA con control operativo.",
@@ -62,14 +79,7 @@
       "@type": "Organization",
       "name": "Orvo"
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Orvo",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://orvo.space/assets/icon-512.png"
-      }
-    },
+    "publisher": { "@id": "https://orvo.space/#organization" },
     "image": "https://orvo.space/assets/icon-512.png"
   }
   </script>
